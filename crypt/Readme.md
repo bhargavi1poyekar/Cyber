@@ -61,32 +61,29 @@
 
 ## Programs Execution:
 
+-> The programs have default plaintexts and output folder. If user wants to give theis own input,
+they can give it using -i and -o flags in commandline. 
+
+python pyfile -i plaintext_path -o cipher_folder_path
+
 1. Rotation Cipher:
 
-    -> python rotation_cipher.py plaintext_path cipher_text_path
-
-        python rotation_cipher.py plaintext/Ceaser-Plain-01.txt ciphertext/
+       python rotation_cipher.py -i Plain.txt -o ciphertext
     
-    -> Here, plaintext/Ceaser-Plain-01.txt is my plaintext file path, and ciphertext/ is the output folder path.
+    -> Here, Plain.txt is my plaintext file path which has all my plaintexts, and ciphertext is the output folder path. If it is not already created, program will create it.
 
 2. Vigenere Cipher:
 
-    -> python vigenere_cipher.py vig_key plaintext_path cipher_text_path
-
-        python vigenere_cipher.py vig_key.txt plaintext/Ceaser-Plain-01.txt ciphertext/
+        python vigenere_cipher.py -i Plain.txt -o ciphertext
 
 
 3. Vernam Cipher:
 
-    -> python vernam_cipher.py plaintext_path cipher_text_path
-
-        python vernam_cipher.py plaintext/Ceaser-Plain-01.txt ciphertext/
+        python vernam_cipher.py -i Plain.txt -o ciphertext
     
 4. Transposition Cipher:
 
-    -> python transposition_cipher.py plaintext_path cipher_text_path
-
-        python transposition_cipher.py plaintext/Ceaser-Plain-01.txt ciphertext/
+        python transposition_cipher.py -i Plain.txt -o ciphertext
 
 
 
