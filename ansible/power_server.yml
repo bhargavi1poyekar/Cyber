@@ -1,0 +1,23 @@
+---
+- hosts: localhost
+  gather_facts: false
+  vars_prompt:
+   - name: username
+     prompt: "Enter Username"
+   - name: password
+     prompt: "Enter Password"
+     private: yes
+
+  tasks:
+
+   - name: power off servers
+     community.vmware.vmware_guest_powerstate:
+        hostname: "vcenter1.umbc.edu"
+        username: "{{username}}"
+        password: "{{password}}"
+        validate_certs: false
+        datacenter: "CyberRange"
+        folder: "/CyberRange/vm/bhargavi"
+        name: "bhar-ub22"
+        state: powered-off
+     register: deploy
