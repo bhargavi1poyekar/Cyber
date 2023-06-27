@@ -1,0 +1,6 @@
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .
+PIZUFBYVKMNRCGJDTQAHSXEWLOuygibnvawxcsdkptzeljmqfhro_@
+
+Plaintext: The essential steps in public key encryption are as  follows. Each user generates a pair of keys to be used for the encryption and decryption of messages. Each user places one of the two keys in a public  accessible place. This is the public key. The companion key is kept private. Each user maintains a collection of public keys obtained from others. If Bob wishes to send a private message to Alice then Bob encrypts the message using public key of Alice. When Alice receives the message she decrypts it using her private key. No other recipient can decrypt the message because only Alice knows her private key.
+
+Ciphertext: Hab_bllbkjwus_ljbtl_wk_tmyswg_cbr_bkgertjwpk_ueb_ul__npsspfl@_Fuga_mlbe_vbkbeujbl_u_tuwe_pn_cbrl_jp_yb_mlbi_npe_jab_bkgertjwpk_uki_ibgertjwpk_pn_dblluvbl@_Fuga_mlbe_tsugbl_pkb_pn_jab_jfp_cbrl_wk_u_tmyswg__uggbllwysb_tsugb@_Hawl_wl_jab_tmyswg_cbr@_Hab_gpdtukwpk_cbr_wl_cbtj_tewqujb@_Fuga_mlbe_duwkjuwkl_u_gpssbgjwpk_pn_tmyswg_cbrl_pyjuwkbi_nepd_pjabel@_Kn_Ipy_fwlabl_jp_lbki_u_tewqujb_dblluvb_jp_Pswgb_jabk_Ipy_bkgertjl_jab_dblluvb_mlwkv_tmyswg_cbr_pn_Pswgb@_Eabk_Pswgb_ebgbwqbl_jab_dblluvb_lab_ibgertjl_wj_mlwkv_abe_tewqujb_cbr@_Gp_pjabe_ebgwtwbkj_guk_ibgertj_jab_dblluvb_ybgumlb_pksr_Pswgb_ckpfl_abe_tewqujb_cbr@
