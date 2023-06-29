@@ -1,0 +1,6 @@
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .
+OEHRIUTLVJKAXGPZSFYMWQNBDCfpsegliayznbjcmkdoqrvwhxtu@_
+
+Plaintext: In April of Nineteen Ninety Four a group working over the Internet and using over one thousand six hundred computers claimed the prize as announced by Rivest Shamir and Adleman after only eight months of work. This challenge used a public key size with length of n of one twenty nine decimal digits or around four hundred twenty bits. This result does not invalidate the use of RSA algorithm but it simply means that larger key sizes must be used. Currently a one thousand twenty four bit key size which is about three hundred decimal digits is considered strong enough for virtually all applications.
+
+Ciphertext: Vc@Okoyb@ml@Gycgrggc@Gycgrt@Umvo@f@iomvk@hmonyci@mwgo@rag@Vcrgocgr@fce@vqyci@mwgo@mcg@ramvqfce@qyx@avceoge@smjkvrgoq@sbfyjge@rag@koyug@fq@fccmvcsge@pt@Fywgqr@Yafjyo@fce@Oebgjfc@flrgo@mcbt@gyiar@jmcraq@ml@hmon_@Mayq@safbbgcig@vqge@f@kvpbys@ngt@qyug@hyra@bgcira@ml@c@ml@mcg@rhgcrt@cycg@egsyjfb@eyiyrq@mo@fomvce@lmvo@avceoge@rhgcrt@pyrq_@Mayq@ogqvbr@emgq@cmr@ycwfbyefrg@rag@vqg@ml@FYO@fbimoyraj@pvr@yr@qyjkbt@jgfcq@rafr@bfoigo@ngt@qyugq@jvqr@pg@vqge_@Hvoogcrbt@f@mcg@ramvqfce@rhgcrt@lmvo@pyr@ngt@qyug@haysa@yq@fpmvr@raogg@avceoge@egsyjfb@eyiyrq@yq@smcqyegoge@qromci@gcmvia@lmo@wyorvfbbt@fbb@fkkbysfrymcq_

@@ -104,7 +104,7 @@ for i in range(len(plaintexts)):
 
     keyfilepath='key/'+inputfile
     if i<9:keyfilename=('0'+str(i+1)+'_key.').join(keyfilepath.split('.'))
-    else: keyfilename=(str(i+1)+'.').join(keyfilepath.split('.'))
+    else: keyfilename=(str(i+1)+'_key.').join(keyfilepath.split('.'))
     
 
     keyfile = open(keyfilename, "w")

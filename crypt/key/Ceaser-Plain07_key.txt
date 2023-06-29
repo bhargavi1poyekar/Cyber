@@ -1,0 +1,6 @@
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .
+VIMBESLOTWYDAKPZGQUJNXHFCRduqgmjzcplheinxbkvfyaostrw_@
+
+Plaintext: A typical stream cipher method encrypts the plaintext one byte at a time although a stream cipher may be designed to operate on one bit at a time or on units larger than a byte at a time. Figure Two.Two b is a representative diagram of stream cipher structure. In this structure a key is input to a pseudorandom bit generator that produces a stream of eight bit numbers that are apparently random. A pseudorandom stream is one that is unpredictable without knowledge of the input key and which has an apparently random character. The output of the generator is combined one byte at a time with the plaintext stream.
+
+Ciphertext: V_yrbpqde_fyvmdi_qpbcmv_imycxg_mnqvrbyf_ycm_bedpnymty_xnm_urym_dy_d_ypim_deycxazc_d_fyvmdi_qpbcmv_idr_um_gmfpznmg_yx_xbmvdym_xn_xnm_upy_dy_d_ypim_xv_xn_anpyf_edvzmv_ycdn_d_urym_dy_d_ypim@_Spzavm_Jsx@Jsx_u_pf_d_vmbvmfmnydypom_gpdzvdi_xj_fyvmdi_qpbcmv_fyvaqyavm@_Tn_ycpf_fyvaqyavm_d_hmr_pf_pnbay_yx_d_bfmagxvdngxi_upy_zmnmvdyxv_ycdy_bvxgaqmf_d_fyvmdi_xj_mpzcy_upy_naiumvf_ycdy_dvm_dbbdvmnyer_vdngxi@_V_bfmagxvdngxi_fyvmdi_pf_xnm_ycdy_pf_anbvmgpqyduem_spycxay_hnxsemgzm_xj_ycm_pnbay_hmr_dng_scpqc_cdf_dn_dbbdvmnyer_vdngxi_qcdvdqymv@_Jcm_xaybay_xj_ycm_zmnmvdyxv_pf_qxiupnmg_xnm_urym_dy_d_ypim_spyc_ycm_bedpnymty_fyvmdi@

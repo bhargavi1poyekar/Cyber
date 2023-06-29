@@ -1,0 +1,6 @@
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .
+AKCOYDGQTJNREWFPHUBVSILZXMqcagpwtbrihnujyzxldfemsvko@_
+
+Plaintext: Generally entire message is not encrypted. Encryption software is quite slow. Even though the amount of data to be encrypted per message is small there may be a steady stream of messages into and out of a system. Encryption hardware costs are nonnegligible. Low cost chip implementations of DES and AES are available but the cost adds up if all nodes in a network must have this capability. Encryption hardware is optimized toward large data sizes. For small blocks of data a high proportion of the time is spent in initialization invocation overhead. An encryption algorithm may be protected by a patent.
+
+Ciphertext: Gpjplqnnk@pjfrlp@upddqtp@rd@jyf@pjalkzfpg_@Yjalkzfryj@dywfsqlp@rd@xerfp@dnys_@Ympj@fbyetb@fbp@quyejf@yw@gqfq@fy@cp@pjalkzfpg@zpl@upddqtp@rd@duqnn@fbplp@uqk@cp@q@dfpqgk@dflpqu@yw@upddqtpd@rjfy@qjg@yef@yw@q@dkdfpu_@Yjalkzfryj@bqlgsqlp@aydfd@qlp@jyjjptnrtrcnp_@Rys@aydf@abrz@ruznpupjfqfryjd@yw@OYB@qjg@AYB@qlp@qmqrnqcnp@cef@fbp@aydf@qggd@ez@rw@qnn@jygpd@rj@q@jpfsylh@uedf@bqmp@fbrd@aqzqcrnrfk_@Yjalkzfryj@bqlgsqlp@rd@yzfruropg@fysqlg@nqltp@gqfq@dropd_@Dyl@duqnn@cnyahd@yw@gqfq@q@brtb@zlyzylfryj@yw@fbp@frup@rd@dzpjf@rj@rjrfrqnroqfryj@rjmyaqfryj@ymplbpqg_@Aj@pjalkzfryj@qntylrfbu@uqk@cp@zlyfpafpg@ck@q@zqfpjf_

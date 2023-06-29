@@ -1,0 +1,6 @@
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .
+EODQRHYBWZTGPJIAKMNCLUXSVFsdrkilqobxgtnvjefphwuazcym@_
+
+Plaintext: An alternative approach to the message authentication code is the one way hash function. As with the message authentication code a hash function accepts a variable size message M as input and produces a fixed size message digest H as output after some computation on M. Typically the message is padded out to an integer multiple of some fixed length for example One Thousand Twenty Four bits and the padding includes the value of the length of the original message in bits. The length field is a security measure to increase the difficulty for an attacker to produce an alternative message with the same hash value.
+
+Ciphertext: Ev@stwipvswbai@seepjsro@wj@woi@nihhsqi@suwoivwbrswbjv@rjki@bh@woi@jvi@zsy@osho@luvrwbjv_@Eh@zbwo@woi@nihhsqi@suwoivwbrswbjv@rjki@s@osho@luvrwbjv@srriewh@s@aspbsdti@hbmi@nihhsqi@P@sh@bveuw@svk@epjkurih@s@lbcik@hbmi@nihhsqi@kbqihw@B@sh@juweuw@slwip@hjni@rjneuwswbjv@jv@P_@Cyebrstty@woi@nihhsqi@bh@eskkik@juw@wj@sv@bvwiqip@nutwbeti@jl@hjni@lbcik@tivqwo@ljp@icsneti@Ivi@Cojuhsvk@Czivwy@Hjup@dbwh@svk@woi@eskkbvq@bvrtukih@woi@astui@jl@woi@tivqwo@jl@woi@jpbqbvst@nihhsqi@bv@dbwh_@Coi@tivqwo@lbitk@bh@s@hirupbwy@nishupi@wj@bvrpishi@woi@kbllbrutwy@ljp@sv@swwsrgip@wj@epjkuri@sv@stwipvswbai@nihhsqi@zbwo@woi@hsni@osho@astui_

@@ -1,0 +1,6 @@
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .
+BLCTOARMVXNFIPZJDGWHSKUQEYzmynsvqdacbotugpkixwejrlhf_@
+
+Plaintext: We have discussed the use of hash functions for message authentication and for the creation of digital signatures. Here are is an examples of secure hash function application. Intrusion detection. In this scheme we store the hash value HF for a file for each file on a system and secure the hash values for example on a write locked drive or write once optical disk that is kept secure. One can later determine if a file has been modified by recomputing HF. An intruder would need to change content of file F without changing its hash value HF. This application requires weak second preimage resistance.
+
+Ciphertext: Us_dzjs_naxyexxsn_wds_exs_gv_dzxd_veuywagux_vgi_tsxxzqs_zewdsuwayzwagu_zun_vgi_wds_yiszwagu_gv_naqawzo_xaquzweisx@_Msis_zis_ax_zu_slztposx_gv_xsyeis_dzxd_veuywagu_zppoayzwagu@_Vuwiexagu_nswsywagu@_Vu_wdax_xydsts_rs_xwgis_wds_dzxd_jzoes_MA_vgi_z_vaos_vgi_szyd_vaos_gu_z_xhxwst_zun_xsyeis_wds_dzxd_jzoesx_vgi_slztpos_gu_z_riaws_ogybsn_niajs_gi_riaws_guys_gpwayzo_naxb_wdzw_ax_bspw_xsyeis@_Zus_yzu_ozwsi_nswsitaus_av_z_vaos_dzx_mssu_tgnavasn_mh_isygtpewauq_MA@_Bu_auwiensi_rgeon_ussn_wg_ydzuqs_yguwsuw_gv_vaos_A_rawdgew_ydzuqauq_awx_dzxd_jzoes_MA@_Hdax_zppoayzwagu_iskeaisx_rszb_xsygun_pisatzqs_isxaxwzuys@

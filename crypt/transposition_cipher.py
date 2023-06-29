@@ -61,7 +61,7 @@ opath=output_folder+'/'
 
 inputfile="Transpose-Plain.txt"
 outputfile = opath + "Cipher".join(inputfile.split("-Plain"))
-ciphertexts=[]
+
 
 create_output_folder('key')
 
@@ -124,7 +124,7 @@ for idx in range(len(plaintexts)):
 
     keyfilepath='key/'+inputfile
     if i<9:keyfilename=('0'+str(idx+1)+'_key.').join(keyfilepath.split('.'))
-    else: keyfilename=(str(idx+1)+'.').join(keyfilepath.split('.'))
+    else: keyfilename=(str(idx+1)+'_key.').join(keyfilepath.split('.'))
     
     keyfile = open(keyfilename, "w")
     keyfile.write('Plaintext: '+ plaintexts[idx] + "\n")
