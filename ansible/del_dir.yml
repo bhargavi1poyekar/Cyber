@@ -1,6 +1,5 @@
 ---
-
-- name: Remove Users
+- name: Create Directory
   hosts: '{{host_name}}'
   become: true
   gather_facts: false
@@ -9,18 +8,16 @@
 
   - name: Read CSV
     set_fact:
-        user_list: "{{lookup('file',vars['csv_file_path']).split('\n')}}"
+        dir_list: "{{lookup('file',vars['csv_file_path']).split('\n')}}"
 
-  - name: Remove Users
-    user:
-        name: "{{username}}"
+  - name: Delete Directory/file
+    file:
+        path: "{{item.split(',')[1]}}"
         state: absent
-        remove: yes
     delegate_to: "{{hostname}}"
     when: inventory_hostname == hostname
     vars:
         hostname: "{{item.split(',')[0]}}"
-        username: "{{item.split(',')[1]}}"
-    loop: "{{user_list}}"
+    loop: "{{dir_list}}"
     loop_control:
         loop_var: item

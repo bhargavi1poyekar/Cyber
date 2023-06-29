@@ -1,6 +1,5 @@
 ---
-
-- name: Remove Users
+- name: Copy File
   hosts: '{{host_name}}'
   become: true
   gather_facts: false
@@ -9,18 +8,18 @@
 
   - name: Read CSV
     set_fact:
-        user_list: "{{lookup('file',vars['csv_file_path']).split('\n')}}"
+        dir_list: "{{lookup('file',vars['csv_file_path']).split('\n')}}"
 
-  - name: Remove Users
-    user:
-        name: "{{username}}"
-        state: absent
-        remove: yes
+  
+  - name: Copy file to Remote Machine from local Machine
+    copy:
+        src: "{{item.split(',')[1]}}"
+        dest: "{{item.split(',')[2]}}"
+        
     delegate_to: "{{hostname}}"
     when: inventory_hostname == hostname
     vars:
         hostname: "{{item.split(',')[0]}}"
-        username: "{{item.split(',')[1]}}"
-    loop: "{{user_list}}"
+    loop: "{{dir_list}}"
     loop_control:
         loop_var: item

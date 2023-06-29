@@ -1,4 +1,4 @@
 hostname,username,password,sudo
-bharg@130.85.121.25,rpr,rprpass,yes
-bhargavi@130.85.121.26,rpr,rprpass,yes
-bhargavi@130.85.121.27,rpr,rprpass,yes
+bharg@130.85.121.25,test,testpass,yes
+bhargavi@130.85.121.26,test,testpass,no
+bhargavi@130.85.121.27,test,testpass,yes

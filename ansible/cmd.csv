@@ -1,0 +1,4 @@
+hostname,command
+bharg@130.85.121.25,ls -l /home
+bhargavi@130.85.121.26, ls -a
+

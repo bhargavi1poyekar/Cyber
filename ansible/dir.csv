@@ -1,0 +1,4 @@
+hostname,directory,permissions
+bharg@130.85.121.25,/home/user/dir,0777
+bhargavi@130.85.121.26,/home/dir2,0777
+
