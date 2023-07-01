@@ -1,6 +1,0 @@
-ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .
-EJZDQXAOMGPVRUHCTNSFWLBYIKurpihxyleavonjwqbfdzgcmtks@_
-
-Plaintext: Public key encryption first publicly proposed by Diffie and Hellman in nineteen Seventy Six is the first truly revolutionary advance in encryption in literally thousands of years. Public key algorithms are based on mathematical functions rather than on simple operations on bit patterns such as are used in symmetric encryption algorithms. More important public key cryptography is asymmetric. It involves the use of two separate keys in contrast to symmetric encryption which uses only one key. The use of two keys has profound consequences in the areas of confidentiality key distribution and authentication.
-
-Ciphertext: Cgroep@vhk@hjpfkqzewj@xefdz@qgroepok@qfwqwdhi@rk@Dexxeh@uji@Ohoonuj@ej@jejhzhhj@Shchjzk@Set@ed@zlh@xefdz@zfgok@fhcwogzewjufk@uicujph@ej@hjpfkqzewj@ej@oezhfuook@zlwgdujid@wx@khufd_@Cgroep@vhk@uoywfezlnd@ufh@rudhi@wj@nuzlhnuzepuo@xgjpzewjd@fuzlhf@zluj@wj@denqoh@wqhfuzewjd@wj@rez@quzzhfjd@dgpl@ud@ufh@gdhi@ej@dknnhzfep@hjpfkqzewj@uoywfezlnd_@Rwfh@enqwfzujz@qgroep@vhk@pfkqzwyfuqlk@ed@udknnhzfep_@Mz@ejcwochd@zlh@gdh@wx@zmw@dhqufuzh@vhkd@ej@pwjzfudz@zw@dknnhzfep@hjpfkqzewj@mlepl@gdhd@wjok@wjh@vhk_@Flh@gdh@wx@zmw@vhkd@lud@qfwxwgji@pwjdhbghjphd@ej@zlh@ufhud@wx@pwjxeihjzeuoezk@vhk@iedzfergzewj@uji@ugzlhjzepuzewj_

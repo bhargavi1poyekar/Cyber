@@ -1,6 +1,0 @@
-ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .
-OVIBGHTLFADWXRQNCYEZKMUSJPzivohdbjuwcyeqstkrfxgnaplm_@
-
-Plaintext: We have discussed the use of hash functions for message authentication and for the creation of digital signatures. Here are is an examples of secure hash function application. Passwords. In this scheme a hash of a password is stored by an operating system rather than the password itself. Thus the actual password is not retrievable by a hacker who gains access to the password file. In simple terms when a user enters a password the hash of that password is compared to the stored hash value for verification. This application requires preimage resistance and perhaps second preimage resistance.
-
-Ciphertext: Uh_jznh_oufvgffho_xjh_gfh_sd_jzfj_dgqvxusqf_dsr_ehffzbh_zgxjhqxuvzxusq_zqo_dsr_xjh_vrhzxusq_sd_oubuxzy_fubqzxgrhf@_Lhrh_zrh_uf_zq_hpzetyhf_sd_fhvgrh_jzfj_dgqvxusq_zttyuvzxusq@_Nzffasrof@_Fq_xjuf_fvjheh_z_jzfj_sd_z_tzffasro_uf_fxsrho_il_zq_sthrzxuqb_flfxhe_rzxjhr_xjzq_xjh_tzffasro_uxfhyd@_Zjgf_xjh_zvxgzy_tzffasro_uf_qsx_rhxruhnziyh_il_z_jzvchr_ajs_bzuqf_zvvhff_xs_xjh_tzffasro_duyh@_Fq_fuetyh_xhref_ajhq_z_gfhr_hqxhrf_z_tzffasro_xjh_jzfj_sd_xjzx_tzffasro_uf_vsetzrho_xs_xjh_fxsrho_jzfj_nzygh_dsr_nhruduvzxusq@_Zjuf_zttyuvzxusq_rhkgurhf_trhuezbh_rhfufxzqvh_zqo_thrjztf_fhvsqo_trhuezbh_rhfufxzqvh@

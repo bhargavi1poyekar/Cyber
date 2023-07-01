@@ -1,6 +1,0 @@
-ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .
-CLOAYPXRZBKFMNGUQHTDVWEIJSyxlhgatvrmoekbqswifnpcdjuz@_
-
-Plaintext: Another possible scenario is an exchange in which one side has a heavy load and cannot afford the time to decrypt all incoming messages. Authentication is carried out on a selective basis with messages being chosen at random for checking. Authentication of a computer program in plaintext is an attractive service. The computer program can be executed without having to decrypt it every time which would be wasteful of processor resources. Howeve, if a message authentication tag were attached to the program it could be checked whenever assurance is required of the integrity of the program.
-
-Ciphertext: Cbqnvgi@sqffrxeg@flgbyirq@rf@yb@gjlvybtg@rb@dvrlv@qbg@frhg@vyf@y@vgycu@eqyh@ybh@lybbqn@yaaqih@nvg@nrkg@nq@hgliusn@yee@rblqkrbt@kgffytgf_@Cpnvgbnrlynrqb@rf@lyiirgh@qpn@qb@y@fgeglnrcg@xyfrf@drnv@kgffytgf@xgrbt@lvqfgb@yn@iybhqk@aqi@lvglorbt_@Cpnvgbnrlynrqb@qa@y@lqkspngi@siqtiyk@rb@seyrbngjn@rf@yb@ynniylnrcg@fgicrlg_@Dvg@lqkspngi@siqtiyk@lyb@xg@gjglpngh@drnvqpn@vycrbt@nq@hgliusn@rn@gcgiu@nrkg@dvrlv@dqpeh@xg@dyfngape@qa@siqlgffqi@igfqpilgf_@Rqdgcg,@ra@y@kgffytg@ypnvgbnrlynrqb@nyt@dgig@ynnylvgh@nq@nvg@siqtiyk@rn@lqpeh@xg@lvglogh@dvgbgcgi@yffpiyblg@rf@igwprigh@qa@nvg@rbngtirnu@qa@nvg@siqtiyk_
