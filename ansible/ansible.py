@@ -34,7 +34,7 @@ def user_remove(input_file, host_name):
     
     ansible_run(playbook_path,extra_vars)
 
-def restart(hosts):
+def restart(host_name):
 
     playbook_path='/home/bhargavi/cyber/ansible/restart_server.yml'
 
@@ -44,7 +44,7 @@ def restart(hosts):
     
     ansible_run(playbook_path,extra_vars)
 
-def create_dir(input_file,hosts):
+def create_dir(input_file,host_name):
     playbook_path='/home/bhargavi/cyber/ansible/create_directory.yml'
 
     extra_vars={
@@ -54,7 +54,7 @@ def create_dir(input_file,hosts):
     
     ansible_run(playbook_path,extra_vars)
 
-def delete_dir(input_file,hosts):
+def delete_dir(input_file,host_name):
     playbook_path='/home/bhargavi/cyber/ansible/del_dir.yml'
 
     extra_vars={
@@ -64,7 +64,7 @@ def delete_dir(input_file,hosts):
     
     ansible_run(playbook_path,extra_vars)
 
-def run_cmds(input_file,hosts):
+def run_cmds(input_file,host_name):
     playbook_path='/home/bhargavi/cyber/ansible/run_cmds.yml'
 
     extra_vars={
@@ -74,7 +74,7 @@ def run_cmds(input_file,hosts):
     
     ansible_run(playbook_path,extra_vars)
 
-def copy_files(input_file,hosts):
+def copy_files(input_file,host_name):
     playbook_path='/home/bhargavi/cyber/ansible/copy_files.yml'
 
     extra_vars={
@@ -83,6 +83,16 @@ def copy_files(input_file,hosts):
     }
     
     ansible_run(playbook_path,extra_vars)
+
+def ufw_ssh(host_name):
+    playbook_path='/home/bhargavi/cyber/ansible/ufw_ssh.yml'
+
+    extra_vars={
+        'host_name':host_name,
+    }
+    
+    ansible_run(playbook_path,extra_vars)
+
 
 def ansible_run(playbook_path,extra_vars):
 
@@ -108,4 +118,5 @@ copy_file='/home/bhargavi/cyber/ansible/copy.csv'
 # create_dir(dir_file,host_name)
 # delete_dir(dir_file,host_name)
 # run_cmds(cmd_file,host_name)
-copy_files(copy_file,host_name)
+# copy_files(copy_file,host_name)
+# ufw_ssh('ub-20')

@@ -1,0 +1,11 @@
+---
+vcenter_hostname: "vcenter1.umbc.edu"
+vcenter_datacenter: "CyberRange"
+vcenter_validate_certs: false
+vcenter_cluster: "Cyber"
+vm_name: "test-bhar-ub22"
+vcenter_folder: "/CyberRange/vm/bhargavi"
+vm_state: "poweredoff"
+vm_template: "CyberRange/vm/CRCSEE/Template/Temp-ub22"
+vcenter_username: "bpoyeka1"
+vcenter_password: "Ansible@test"

@@ -1,6 +1,10 @@
 ---
-- hosts: localhost
+- name: Power on VM
+  hosts: localhost
   gather_facts: false
+  collections:
+   - community.vmware
+
   vars_prompt:
    - name: username
      prompt: "Enter Username"
@@ -8,16 +12,15 @@
      prompt: "Enter Password"
      private: yes
 
-  tasks:
+  pre_tasks:
+   - include_vars: vcenter_vars.yml
 
-   - name: power off servers
-     community.vmware.vmware_guest_powerstate:
-        hostname: "vcenter1.umbc.edu"
+  tasks:
+   - name: power on vm
+     vmware_guest_powerstate:
+        hostname: "{{vcenter_hostname}}"
         username: "{{username}}"
         password: "{{password}}"
-        validate_certs: false
-        datacenter: "CyberRange"
-        folder: "/CyberRange/vm/bhargavi"
-        name: "bhar-ub22"
-        state: powered-off
-     register: deploy
+        validate_certs: "{{vcenter_validate_certs}}"
+        name: "{{vm_name}}"
+        state: powered-on
