@@ -1,6 +1,0 @@
-ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .
-GSHJTCIADEZYKORFVXNQLMUWBPuzqwxopvtdhajcsikfylnbmegr@_
-
-Plaintext: There are a number of applications in which the same message is broadcast to a number of destinations. Two examples are notification to users that the network is now unavailable and an alarm signal in a control center. It is cheaper and more reliable to have only one destination responsible for monitoring authenticity. Thus the message must be broadcast in plaintext with an associated message authentication tag. The responsible system performs authentication to ensures that message has not been tempered with. When a violation is detected then the other destination systems are alerted by a general alarm.
-
-Ciphertext: Qvxfx@ufx@u@cnjzxf@so@uiiatqultscy@tc@mvtqv@lvx@yujx@jxyyupx@ty@zfsuwquyl@ls@u@cnjzxf@so@wxyltcultscy_@Qms@xeujiaxy@ufx@csltotqultsc@ls@nyxfy@lvul@lvx@cxlmsfh@ty@csm@ncubutauzax@ucw@uc@uaufj@ytpcua@tc@u@qsclfsa@qxclxf_@Dl@ty@qvxuixf@ucw@jsfx@fxatuzax@ls@vubx@scag@scx@wxyltcultsc@fxyiscytzax@osf@jsctlsftcp@unlvxcltqtlg_@Qvny@lvx@jxyyupx@jnyl@zx@zfsuwquyl@tc@iautclxel@mtlv@uc@uyysqtulxw@jxyyupx@unlvxcltqultsc@lup_@Qvx@fxyiscytzax@ygylxj@ixfosfjy@unlvxcltqultsc@ls@xcynfxy@lvul@jxyyupx@vuy@csl@zxxc@lxjixfxw@mtlv_@Uvxc@u@btsaultsc@ty@wxlxqlxw@lvxc@lvx@slvxf@wxyltcultsc@ygylxjy@ufx@uaxflxw@zg@u@pxcxfua@uaufj_

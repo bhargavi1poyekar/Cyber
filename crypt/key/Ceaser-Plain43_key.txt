@@ -1,6 +1,0 @@
-ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .
-BKIMWNEVZTSCXHDUPOAGQFJRLYshinpxrtcudvwmleyaqzfkojbg@_
-
-Plaintext: If Alice is in the next room from Bob then Bob could generate a key and write it down on a piece of paper or store it on a disk or thumb drive and hand it to Alice. But if Alice is on the other side of the continent or the world what can Bob do. He could encrypt this key using symmetric encryption and email it to Alice. But this means that Bob and Alice must share a secret key to encrypt this new secret key. Furthermore Bob and everyone else who uses this new email package faces the same problem with every potential correspondent. The problem is each pair of correspondents must share a unique secret key.
-
-Ciphertext: Zx@Bvcip@cq@cm@ztp@mpjz@allw@xalw@Klh@ztpm@Klh@ilfvn@rpmpaszp@s@dpb@smn@oaczp@cz@nlom@lm@s@ecpip@lx@esepa@la@qzlap@cz@lm@s@ncqd@la@ztfwh@nackp@smn@tsmn@cz@zl@Bvcip_@Kfz@cx@Bvcip@cq@lm@ztp@lztpa@qcnp@lx@ztp@ilmzcmpmz@la@ztp@olavn@otsz@ism@Klh@nl_@Vp@ilfvn@pmiabez@ztcq@dpb@fqcmr@qbwwpzaci@pmiabezclm@smn@pwscv@cz@zl@Bvcip_@Kfz@ztcq@wpsmq@ztsz@Klh@smn@Bvcip@wfqz@qtsap@s@qpiapz@dpb@zl@pmiabez@ztcq@mpo@qpiapz@dpb_@Nfaztpawlap@Klh@smn@pkpablmp@pvqp@otl@fqpq@ztcq@mpo@pwscv@esidsrp@xsipq@ztp@qswp@ealhvpw@oczt@pkpab@elzpmzcsv@ilaapqelmnpmz_@Gtp@ealhvpw@cq@psit@esca@lx@ilaapqelmnpmzq@wfqz@qtsap@s@fmcyfp@qpiapz@dpb_

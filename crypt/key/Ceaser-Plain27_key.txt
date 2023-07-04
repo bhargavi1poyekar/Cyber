@@ -1,6 +1,0 @@
-ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .
-NTXFOURVGCKPYSLWADJEBMZHIQdgplxfihkqaonyrjuctvwesbzm_@
-
-Plaintext: Terms used in Public key encryption. Public and private key is a pair of keys that have been selected so if one is used for encryption the other is used for decryption. The exact transformations performed by the encryption algorithm depend on the public or private key that is provided as input. Ciphertext is the scrambled message produced as output. It depends on the plaintext and the key. For a given message two different keys will produce two different ciphertexts. Decryption algorithm is an algorithm that accepts the ciphertext and the matching key and produces the original plaintext.
-
-Ciphertext: Excnt_wtxl_ky_Wwgokp_axz_xypczjvkry@_Wwgokp_dyl_jckedvx_axz_kt_d_jdkc_rf_axzt_vhdv_hdex_gxxy_txoxpvxl_tr_kf_ryx_kt_wtxl_frc_xypczjvkry_vhx_rvhxc_kt_wtxl_frc_lxpczjvkry@_Ehx_xbdpv_vcdytfrcndvkryt_jxcfrcnxl_gz_vhx_xypczjvkry_doirckvhn_lxjxyl_ry_vhx_jwgokp_rc_jckedvx_axz_vhdv_kt_jcreklxl_dt_kyjwv@_Xkjhxcvxbv_kt_vhx_tpcdngoxl_nxttdix_jcrlwpxl_dt_rwvjwv@_Gv_lxjxylt_ry_vhx_jodkyvxbv_dyl_vhx_axz@_Urc_d_ikexy_nxttdix_vsr_lkffxcxyv_axzt_skoo_jcrlwpx_vsr_lkffxcxyv_pkjhxcvxbvt@_Fxpczjvkry_doirckvhn_kt_dy_doirckvhn_vhdv_dppxjvt_vhx_pkjhxcvxbv_dyl_vhx_ndvphkyi_axz_dyl_jcrlwpxt_vhx_rckikydo_jodkyvxbv@
