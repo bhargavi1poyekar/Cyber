@@ -1,11 +1,11 @@
 from ansible_runner import run
 
-inventory_path="/home/bhargavi/cyber/ansible/inventory"
+inventory_path="/home/bhargavi/Cyber/ansible/playbooks/inventory"
 become_password='adminpass'
 
 def install_packages(input_file, host_name):  
 
-    playbook_path='/home/bhargavi/cyber/ansible/install_package.yml'
+    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/install_package.yml'
 
     extra_vars={
         'host_name':host_name,
@@ -15,7 +15,7 @@ def install_packages(input_file, host_name):
     ansible_run(playbook_path,extra_vars)
 
 def user_add(input_file, host_name):
-    playbook_path='/home/bhargavi/cyber/ansible/userremove.yml'
+    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/userremove.yml'
 
     extra_vars={
         'host_name':host_name,
@@ -25,7 +25,7 @@ def user_add(input_file, host_name):
     ansible_run(playbook_path,extra_vars)
 
 def user_remove(input_file, host_name):
-    playbook_path='/home/bhargavi/cyber/ansible/userremove.yml'
+    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/userremove.yml'
 
     extra_vars={
         'host_name':host_name,
@@ -36,7 +36,7 @@ def user_remove(input_file, host_name):
 
 def restart(host_name):
 
-    playbook_path='/home/bhargavi/cyber/ansible/restart_server.yml'
+    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/restart_server.yml'
 
     extra_vars={
         'host_name':host_name,
@@ -45,7 +45,7 @@ def restart(host_name):
     ansible_run(playbook_path,extra_vars)
 
 def create_dir(input_file,host_name):
-    playbook_path='/home/bhargavi/cyber/ansible/create_directory.yml'
+    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/create_directory.yml'
 
     extra_vars={
         'host_name':host_name,
@@ -55,7 +55,7 @@ def create_dir(input_file,host_name):
     ansible_run(playbook_path,extra_vars)
 
 def delete_dir(input_file,host_name):
-    playbook_path='/home/bhargavi/cyber/ansible/del_dir.yml'
+    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/del_dir.yml'
 
     extra_vars={
         'host_name':host_name,
@@ -65,7 +65,7 @@ def delete_dir(input_file,host_name):
     ansible_run(playbook_path,extra_vars)
 
 def run_cmds(input_file,host_name):
-    playbook_path='/home/bhargavi/cyber/ansible/run_cmds.yml'
+    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/run_cmds.yml'
 
     extra_vars={
         'host_name':host_name,
@@ -75,7 +75,7 @@ def run_cmds(input_file,host_name):
     ansible_run(playbook_path,extra_vars)
 
 def copy_files(input_file,host_name):
-    playbook_path='/home/bhargavi/cyber/ansible/copy_files.yml'
+    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/copy_files.yml'
 
     extra_vars={
         'host_name':host_name,
@@ -85,7 +85,7 @@ def copy_files(input_file,host_name):
     ansible_run(playbook_path,extra_vars)
 
 def ufw_ssh(host_name):
-    playbook_path='/home/bhargavi/cyber/ansible/ufw_ssh.yml'
+    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/ufw_ssh.yml'
 
     extra_vars={
         'host_name':host_name,
@@ -104,14 +104,14 @@ def ansible_run(playbook_path,extra_vars):
 
     run(playbook=playbook_path, **options)
 
-host_name='all'
-install_file='/home/bhargavi/cyber/ansible/packages.csv'
-user_file='/home/bhargavi/cyber/ansible/users.csv'
-remove_file='/home/bhargavi/cyber/ansible/users_remove.csv'
-dir_file='/home/bhargavi/cyber/ansible/dir.csv'
-cmd_file='/home/bhargavi/cyber/ansible/cmd.csv'
-copy_file='/home/bhargavi/cyber/ansible/copy.csv'
-# install_packages(install_file,host_name)
+host_name='vmservers'
+install_file='/home/bhargavi/Cyber/ansible/csv_files/packages.csv'
+user_file='/home/bhargavi/Cyber/ansible/csv_files/users.csv'
+remove_file='/home/bhargavi/Cyber/ansible/csv_files/users_remove.csv'
+dir_file='/home/bhargavi/Cyber/ansible/csv_files/dir.csv'
+cmd_file='/home/bhargavi/Cyber/ansible/csv_files/cmd.csv'
+copy_file='/home/bhargavi/Cyber/ansible/csv_files/copy.csv'
+install_packages(install_file,host_name)
 # user_add(user_file,host_name)
 # user_remove(remove_file,host_name)
 # restart(host_name)

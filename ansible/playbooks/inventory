@@ -1,6 +1,9 @@
+localhost
+
+[vmservers]
 bharg@130.85.121.25
 bhargavi@130.85.121.26
 bhargavi@130.85.121.27
 
-[ub-20]
+[ub20]
 bharg@130.85.121.25

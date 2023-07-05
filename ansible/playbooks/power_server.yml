@@ -5,13 +5,6 @@
   collections:
    - community.vmware
 
-  vars_prompt:
-   - name: username
-     prompt: "Enter Username"
-   - name: password
-     prompt: "Enter Password"
-     private: yes
-
   pre_tasks:
    - include_vars: vcenter_vars.yml
 
@@ -19,8 +12,8 @@
    - name: power on vm
      vmware_guest_powerstate:
         hostname: "{{vcenter_hostname}}"
-        username: "{{username}}"
-        password: "{{password}}"
+        username: "{{vcenter_username}}"
+        password: "{{vcenter_password}}"
         validate_certs: "{{vcenter_validate_certs}}"
         name: "{{vm_name}}"
         state: powered-on
