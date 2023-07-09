@@ -93,6 +93,33 @@ def ufw_ssh(host_name):
     
     ansible_run(playbook_path,extra_vars)
 
+def ufw_before_backup(host_name):
+    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/ufw_before.yml'
+
+    extra_vars={
+        'host_name':host_name,
+    }
+    
+    ansible_run(playbook_path,extra_vars)
+
+def ufw_reset(host_name):
+    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/ufw_reset.yml'
+
+    extra_vars={
+        'host_name':host_name,
+    }
+    
+    ansible_run(playbook_path,extra_vars)
+
+def xrdp_install(host_name):
+    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/xrdp.yml'
+
+    extra_vars={
+        'host_name':host_name,
+    }
+    
+    ansible_run(playbook_path,extra_vars)
+
 
 def ansible_run(playbook_path,extra_vars):
 
@@ -111,7 +138,7 @@ remove_file='/home/bhargavi/Cyber/ansible/csv_files/users_remove.csv'
 dir_file='/home/bhargavi/Cyber/ansible/csv_files/dir.csv'
 cmd_file='/home/bhargavi/Cyber/ansible/csv_files/cmd.csv'
 copy_file='/home/bhargavi/Cyber/ansible/csv_files/copy.csv'
-install_packages(install_file,host_name)
+# install_packages(install_file,host_name)
 # user_add(user_file,host_name)
 # user_remove(remove_file,host_name)
 # restart(host_name)
@@ -119,4 +146,8 @@ install_packages(install_file,host_name)
 # delete_dir(dir_file,host_name)
 # run_cmds(cmd_file,host_name)
 # copy_files(copy_file,host_name)
-# ufw_ssh('ub-20')
+# ufw_ssh('ub20')
+# ufw_before_backup('ub20')
+# ufw_reset('ub20')
+
+xrdp_install('ub20')

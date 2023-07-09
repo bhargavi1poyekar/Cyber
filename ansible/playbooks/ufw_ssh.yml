@@ -9,5 +9,8 @@
           block: |
               # ok ssh to itself
               -A ufw-before-input -p tcp --dport 22 -j ACCEPT
+
+              # Allow RDP
+              -A ufw-before-input -p tcp --dport 3389 -j ACCEPT
           insertbefore: '^# ok icmp codes for INPUT'
        loop: [0] 
