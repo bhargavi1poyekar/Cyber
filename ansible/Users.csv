@@ -1,0 +1,11 @@
+Timestamp,Email Address,Do you want to perform the tasks on same machines?,Machines for adding users,"Upload a csv file of users to be added in the following format.
+
+username, password, make_sudo
+bhargavi, bhargavi@pass, yes ",Machines for removing users.,Give a comma separated list of usernames to be removed.
+7/9/2023 11:29:49,bpoyeka1@umbc.edu,Yes,"130.85.121.26, 130.85.121.27","test,testpass,yes
+test,testpass,no
+test,testpass,yes
+crsuser1,crsuserpass, yes",,
+7/9/2023 11:32:52,bpoyeka1@umbc.edu,No,"130.85.121.26,130.85.121.27","crsuser3,crsuserpass,yes
+crsuser4,crsuserpass,no
+crsuser5,crsuserpass,yes","130.85.121.26,130.85.121.27","test, crsuser1"

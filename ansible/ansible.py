@@ -1,4 +1,8 @@
 from ansible_runner import run
+import pandas as pd
+import json
+import numpy as np
+import math
 
 inventory_path="/home/bhargavi/Cyber/ansible/playbooks/inventory"
 become_password='adminpass'
@@ -14,12 +18,12 @@ def install_packages(input_file, host_name):
     
     ansible_run(playbook_path,extra_vars)
 
-def user_add(input_file, host_name):
-    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/userremove.yml'
+def user_add(add_users_list, host_name):
+    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/user_add.yml'
 
     extra_vars={
         'host_name':host_name,
-        'csv_file_path':input_file
+        'add_users_list':add_users_list
     }
     
     ansible_run(playbook_path,extra_vars)
@@ -131,13 +135,13 @@ def ansible_run(playbook_path,extra_vars):
 
     run(playbook=playbook_path, **options)
 
-host_name='vmservers'
-install_file='/home/bhargavi/Cyber/ansible/csv_files/packages.csv'
-user_file='/home/bhargavi/Cyber/ansible/csv_files/users.csv'
-remove_file='/home/bhargavi/Cyber/ansible/csv_files/users_remove.csv'
-dir_file='/home/bhargavi/Cyber/ansible/csv_files/dir.csv'
-cmd_file='/home/bhargavi/Cyber/ansible/csv_files/cmd.csv'
-copy_file='/home/bhargavi/Cyber/ansible/csv_files/copy.csv'
+# host_name='vmservers'
+# install_file='/home/bhargavi/Cyber/ansible/csv_files/packages.csv'
+# user_file='/home/bhargavi/Cyber/ansible/csv_files/users.csv'
+# remove_file='/home/bhargavi/Cyber/ansible/csv_files/users_remove.csv'
+# dir_file='/home/bhargavi/Cyber/ansible/csv_files/dir.csv'
+# cmd_file='/home/bhargavi/Cyber/ansible/csv_files/cmd.csv'
+# copy_file='/home/bhargavi/Cyber/ansible/csv_files/copy.csv'
 # install_packages(install_file,host_name)
 # user_add(user_file,host_name)
 # user_remove(remove_file,host_name)
@@ -149,5 +153,26 @@ copy_file='/home/bhargavi/Cyber/ansible/csv_files/copy.csv'
 # ufw_ssh('ub20')
 # ufw_before_backup('ub20')
 # ufw_reset('ub20')
+# xrdp_install('ub20')
 
-xrdp_install('ub20')
+df_users=pd.read_csv('Users.csv')
+
+for index, row in df_users.iterrows():
+    if row[2].lower()=='yes':
+        add_host_name=row[3].split(',') or row[5].split(',')
+        remove_host_name=row[3].split(',') or row[5].split(',')
+    else:
+        add_host_name=row[3].split(',')
+        remove_host_name=row[5].split(',')
+
+    add_host_name=['bhargavi@'+ip for ip in add_host_name]
+    add_users=row[4].split('\n')
+    add_users_list=json.dumps(add_users)
+
+    user_add(add_users_list,add_host_name)
+
+    
+
+
+
+    
