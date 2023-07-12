@@ -1,4 +1,8 @@
 hostname,username,password,sudo
-bharg@130.85.121.25,test,testpass,yes
-bhargavi@130.85.121.26,test,testpass,no
-bhargavi@130.85.121.27,test,testpass,yes
+cmscuser@130.85.220.202,sanaa,cmscuser,yes
+cmscuser@133.228.123.3,sanaa,cmscuser,yes
+cmscuser@133.228.123.1,sanaa,cmscuser,yes
+cmscuser@130.85.220.202,jerry,cmscuser,yes
+cmscuser@133.228.123.3,jerry,cmscuser,yes
+cmscuser@133.228.123.1,jerry,cmscuser,yes
+

@@ -1,9 +1,13 @@
 localhost
 
 [vmservers]
-bharg@130.85.121.25
 bhargavi@130.85.121.26
 bhargavi@130.85.121.27
 
 [ub20]
-bharg@130.85.121.25
+bharg@133.228.78.3
+
+[cmsc626]
+cmscuser@130.85.220.202
+cmscuser@133.228.123.3
+cmscuser@133.228.123.1
