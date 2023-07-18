@@ -28,16 +28,16 @@
     loop_control:
         loop_var: item
 
-  - name: Force to change pass on first login
-    ansible.builtin.shell: chage -d 0 "{{username}}"
-    delegate_to: "{{hostname}}"
-    when: inventory_hostname == hostname
-    vars:
-        hostname: "{{item.split(',')[0]}}"
-        username: "{{item.split(',')[1]}}"
-    loop: "{{user_list}}"
-    loop_control:
-        loop_var: item
+#   - name: Force to change pass on first login
+#     ansible.builtin.shell: chage -d 0 "{{username}}"
+#     delegate_to: "{{hostname}}"
+#     when: inventory_hostname == hostname
+#     vars:
+#         hostname: "{{item.split(',')[0]}}"
+#         username: "{{item.split(',')[1]}}"
+#     loop: "{{user_list}}"
+#     loop_control:
+#         loop_var: item
 
   - name: Add user to sudo group
     user:

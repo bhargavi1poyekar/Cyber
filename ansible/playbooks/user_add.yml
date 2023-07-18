@@ -7,7 +7,7 @@
 
   tasks:
 
-  - name: Read CSV
+  - name: Read JSON
     set_fact:
         user_list: "{{ add_users_list | from_json }}"
 

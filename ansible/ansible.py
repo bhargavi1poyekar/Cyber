@@ -5,7 +5,7 @@ import numpy as np
 import math
 
 inventory_path="/home/bhargavi/Cyber/ansible/playbooks/inventory"
-become_password='cmsc626'
+become_password='Crcsee2#'
 
 def install_packages(input_file, host_name):  
 
@@ -18,22 +18,53 @@ def install_packages(input_file, host_name):
     
     ansible_run(playbook_path,extra_vars)
 
-def user_add(input_file, host_name):
-    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/useradd.yml'
+def user_csv_process(input_file):
+
+    df_users=pd.read_csv(input_file)
+    df_users=df_users.fillna('')
+
+    for index, row in df_users.iterrows():
+        if row[2].lower()=='yes':
+            if row[3]!='':
+                add_host_name=[r.strip() for r in row[3].split(',')] 
+                remove_host_name=[r.strip() for r in row[3].split(',')] 
+            else:
+                add_host_name=[r.strip() for r in row[5].split(',')]
+                remove_host_name=[r.strip() for r in row[5].split(',')]
+        else:
+            add_host_name=[r.strip() for r in row[3].split(',')] 
+            remove_host_name=[r.strip() for r in row[5].split(',')]
+
+        if row[4]!='':
+            add_host_name=['crange1@'+ip for ip in add_host_name]
+            add_users=row[4].split('\n')
+            add_users_list=json.dumps(add_users)
+            user_add(add_users_list,add_host_name)
+            
+        
+        if row[6]!='':
+            remove_users=row[6].split('\n')
+            remove_users_list=json.dumps(remove_users)
+            remove_host_name=['crange1@'+ip for ip in remove_host_name]
+            user_remove(remove_users_list,remove_host_name)
+
+def user_add(add_users_list, add_host_name):
+    
+    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/user_add.yml'
 
     extra_vars={
-        'host_name':host_name,
-        'csv_file_path':input_file
+        'host_name':add_host_name,
+        'add_users_list':add_users_list
     }
     
     ansible_run(playbook_path,extra_vars)
 
-def user_remove(input_file, host_name):
-    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/userremove.yml'
+def user_remove(remove_users_list, remove_host_name):
+    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/user_remove.yml'
 
     extra_vars={
-        'host_name':host_name,
-        'csv_file_path':input_file
+        'host_name':remove_host_name,
+        'remove_users_list':remove_users_list
     }
     
     ansible_run(playbook_path,extra_vars)
@@ -135,15 +166,15 @@ def ansible_run(playbook_path,extra_vars):
 
     run(playbook=playbook_path, **options)
 
-host_name='cmsc626'
+host_name='vmservers'
 # install_file='/home/bhargavi/Cyber/ansible/csv_files/packages.csv'
-user_file='/home/bhargavi/Cyber/ansible/csv_files/users.csv'
+# user_file='/home/bhargavi/Cyber/ansible/csv_files/users.csv'
 # remove_file='/home/bhargavi/Cyber/ansible/csv_files/users_remove.csv'
 # dir_file='/home/bhargavi/Cyber/ansible/csv_files/dir.csv'
 # cmd_file='/home/bhargavi/Cyber/ansible/csv_files/cmd.csv'
 # copy_file='/home/bhargavi/Cyber/ansible/csv_files/copy.csv'
 # install_packages(install_file,host_name)
-user_add(user_file,host_name)
+user_csv_process('Users.csv')
 # user_remove(remove_file,host_name)
 # restart(host_name)
 # create_dir(dir_file,host_name)
@@ -155,21 +186,8 @@ user_add(user_file,host_name)
 # ufw_reset('ub20')
 # xrdp_install('ub20')
 
-# df_users=pd.read_csv('Users.csv')
 
-# for index, row in df_users.iterrows():
-#     if row[2].lower()=='yes':
-#         add_host_name=row[3].split(',') or row[5].split(',')
-#         remove_host_name=row[3].split(',') or row[5].split(',')
-#     else:
-#         add_host_name=row[3].split(',')
-#         remove_host_name=row[5].split(',')
 
-#     add_host_name=['bhargavi@'+ip for ip in add_host_name]
-#     add_users=row[4].split('\n')
-#     add_users_list=json.dumps(add_users)
-
-#     user_add(add_users_list,add_host_name)
 
     
 
