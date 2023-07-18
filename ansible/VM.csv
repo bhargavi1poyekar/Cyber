@@ -1,0 +1,9 @@
+Timestamp,Email Address,Name,UMBC ID,UMBC Affiliation,Course Number,Instructor/ Faculty Name,"TA Names and ID's (Separate by Comma)
+Eg: Bhargavi:UG33454, Pranit:PR46573",Please provide a short description of your course and why the VM's are required.,Operating System,No. of CPU's,Memory (RAM),"If more than 8 GB of RAM required, please justify",Hard Disk Capacity,"If Hard Disk required more than 128 GB, please justify",Do you want yourself to be added as a sudo user?,How many VM's do you want to create with above specifications?,When should these VM's be created? (start date),When should these VM's be deleted? (end date),"Please upload list of student UMBC ID and Usernames to be created 
+Example: 
+UH32334, Bhargavi
+HJ22313, Pranit
+",Do you want us to add any sudo users? ,"If answer to above question is yes, give list of sudo users.",Course Name
+7/18/2023 19:36:45,bpoyeka1@umbc.edu,Bhargavi,CH22342,TA,CMSC626,Ram Rusatgi,Bhargavi:CH22342,cmsc626 course,Kali Linux,1,4 GB,,32 GB,,Yes,2,7/18/2023,7/19/2023,,No,,PCS
+7/18/2023 19:39:16,bpoyeka1@umbc.edu,Bhargavi,CH22454,TA,CMSC626,Ram Rustagi,Bhargavi: CH22454,cmsccourse,Ubuntu 20,1,4 GB,,32 GB,,No,4,7/18/2023,7/19/2023,,No,,PCS
+7/18/2023 19:40:47,bpoyeka1@umbc.edu,Bhargavi,CH22454,TA,CMSC626,Ram Rustagi,Bhargavi:CH22454,cmsc626,Ubuntu 22,1,4 GB,,32 GB,,No,2,7/18/2023,7/19/2023,,,,PCS
