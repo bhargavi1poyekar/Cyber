@@ -247,8 +247,8 @@ host_name='vmservers'
 # install_packages(install_file,host_name)
 
 # user_csv_process('Users.csv')
-dir_csv_process('Dir.csv')
-#power_csv_process('Power.csv')
+# dir_csv_process('Dir.csv')
+power_csv_process('Power.csv')
 
 # user_remove(remove_file,host_name)
 # restart(host_name)
