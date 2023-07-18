@@ -6,10 +6,23 @@ import math
 
 inventory_path="/home/bhargavi/Cyber/ansible/playbooks/inventory"
 become_password='Crcsee2#'
-ip_name={
+
+IP_NAME={
    '130.85.121.26':'bhar-ub22',
    '130.85.121.27':'bhar-kali',
    '133.228.78.3':'bhar-ub20'
+}
+
+VM_TEMPLATES={
+   'Kali Linux':'CyberRange/vm/CRCSEE/Template/Template-Kali-crg',
+   'Ubuntu 20':'CyberRange/vm/CRCSEE/Template/template-ub20',
+   'Ubuntu 22':'CyberRange/vm/CRCSEE/Template/Temp-ub22',
+}
+
+VM_NAME={
+   'Kali Linux':'Kali',
+   'Ubuntu 20':'Ub20',
+   'Ubuntu 22':'Ub22',
 }
 
 def install_packages(input_file, host_name):  
@@ -83,20 +96,20 @@ def power_csv_process(input_file):
         if row[2]=='Yes':
             if row[3]!='':
             	restart_host_name=[f'crange1@{r.strip()}' for r in row[3].split(',')] 
-            	power_on_machine=[ip_name[r.strip()] for r in row[3].split(',')] 
-            	power_off_machine=[ip_name[r.strip()] for r in row[3].split(',')]
+            	power_on_machine=[IP_NAME[r.strip()] for r in row[3].split(',')] 
+            	power_off_machine=[IP_NAME[r.strip()] for r in row[3].split(',')]
             elif row[4]!='':
                 restart_host_name=[f'crange1@{r.strip()}' for r in row[4].split(',')] 
-                power_on_machine=[ip_name[r.strip()] for r in row[4].split(',')] 
-                power_off_machine=[ip_name[r.strip()] for r in row[4].split(',')]
+                power_on_machine=[IP_NAME[r.strip()] for r in row[4].split(',')] 
+                power_off_machine=[IP_NAME[r.strip()] for r in row[4].split(',')]
             else:
                 restart_host_name=[f'crange1@{r.strip()}' for r in row[5].split(',')] 
-                power_on_machine=[ip_name[r.strip()] for r in row[5].split(',')] 
-                power_off_machine=[ip_name[r.strip()] for r in row[5].split(',')]
+                power_on_machine=[IP_NAME[r.strip()] for r in row[5].split(',')] 
+                power_off_machine=[IP_NAME[r.strip()] for r in row[5].split(',')]
         else:
             restart_host_name=[f'crange1@{r.strip()}' for r in row[3].split(',')]
-            power_on_machine=[ip_name[r.strip()] for r in row[4].split(',')] 
-            power_off_machine=[ip_name[r.strip()] for r in row[5].split(',')]
+            power_on_machine=[IP_NAME[r.strip()] for r in row[4].split(',')] 
+            power_off_machine=[IP_NAME[r.strip()] for r in row[5].split(',')]
                 
     if restart_host_name and restart_host_name[0]!='crange1@':
     	restart(restart_host_name)
@@ -137,6 +150,30 @@ def restart(host_name):
     }
 
     ansible_run(playbook_path,extra_vars)
+
+def deploy_template_csv(input_file):
+    df_vm=pd.read_csv(input_file)
+    df_vm=df_vm.fillna('')
+    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/deploy_template.yml'
+    for index,row in df_vm.iterrows():
+        course_name=row[5]
+        prof_name=row[6]
+        os=row[9]
+        num=row[16]
+        folder_name=course_name+prof_name.split(' ')[0]
+        vm_name=course_name+prof_name.split(' ')[0]+'-'+VM_NAME[os]
+        template=VM_TEMPLATES[os]
+        
+        extra_vars={
+            'create_folder_name':folder_name,
+            'create_vm_name':vm_name,
+	    'create_template':template,
+            'num_vm':num
+        }
+        options={
+	    'extravars': extra_vars
+        }
+        run(playbook=playbook_path, **options)
 
 def dir_csv_process(input_file):
 
@@ -241,7 +278,7 @@ def ufw_reset(host_name):
     # }
 
     # ansible_run(playbook_path,extra_vars)
-
+ 
 
 def ansible_run(playbook_path,extra_vars):
 
@@ -265,6 +302,7 @@ host_name='vmservers'
 # user_csv_process('Users.csv')
 # dir_csv_process('Dir.csv')
 # power_csv_process('Power.csv')
+deploy_template_csv('VM.csv')
 
 # user_remove(remove_file,host_name)
 # restart(host_name)

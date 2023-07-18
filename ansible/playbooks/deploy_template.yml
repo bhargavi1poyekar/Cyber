@@ -14,7 +14,7 @@
         password: "{{ vcenter_password }}"
         validate_certs: "{{ vcenter_validate_certs }}"
         datacenter_name: "{{vcenter_datacenter}}"
-        folder_name: "{{ vcenter_folder }}"
+        folder_name: "{{ create_folder_name }}"
         folder_type: vm
         state: present
 
@@ -26,8 +26,13 @@
         validate_certs: "{{vcenter_validate_certs}}"
         datacenter: "{{vcenter_datacenter}}"
         cluster: "{{vcenter_cluster}}"
-        name: "{{vm_name}}"
-        folder: "{{vcenter_folder}}"
-        template: "{{vm_template}}"
+        name: "{{create_vm_name}}-{{'{:02d}'.format(item)}}"
+        folder: "{{create_folder_name}}"
+        template: "{{create_template}}"
         state: "{{vm_state}}"
+      loop: "{{range(1,num_vm+1)}}"
+      loop_control:
+        loop_var: item
+      
+      
 
