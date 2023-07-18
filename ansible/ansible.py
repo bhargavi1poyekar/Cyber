@@ -190,14 +190,14 @@ def ufw_reset(host_name):
     
     ansible_run(playbook_path,extra_vars)
 
-def xrdp_install(host_name):
-    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/xrdp.yml'
+# def xrdp_install(host_name):
+#     playbook_path='/home/bhargavi/Cyber/ansible/playbooks/xrdp.yml'
 
-    extra_vars={
-        'host_name':host_name,
-    }
+#     extra_vars={
+#         'host_name':host_name,
+#     }
     
-    ansible_run(playbook_path,extra_vars)
+#     ansible_run(playbook_path,extra_vars)
 
 
 def ansible_run(playbook_path,extra_vars):

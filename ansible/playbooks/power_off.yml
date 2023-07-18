@@ -5,12 +5,12 @@
   collections:
     - community.vmware
 
-  vars_prompt:
-    - name: vcenter_username
-      prompt: "Enter vcenter username"
-    - name: vcenter_password
-      prompt: "Enter vcenter password"
-      private: yes
+  # vars_prompt:
+  #   - name: vcenter_username
+  #     prompt: "Enter vcenter username"
+  #   - name: vcenter_password
+  #     prompt: "Enter vcenter password"
+  #     private: yes
 
   pre_tasks:
     - include_vars: vcenter_vars.yml
