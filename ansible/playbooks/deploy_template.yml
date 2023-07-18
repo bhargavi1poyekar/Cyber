@@ -24,10 +24,10 @@
         username: "{{vcenter_username}}"
         password: "{{vcenter_password}}"
         validate_certs: "{{vcenter_validate_certs}}"
-        datacenter: "vcenter_datacenter"
+        datacenter: "{{vcenter_datacenter}}"
         cluster: "{{vcenter_cluster}}"
         name: "{{vm_name}}"
-        folder: "{{vcenter_destination_folder}}"
+        folder: "{{vcenter_folder}}"
         template: "{{vm_template}}"
         state: "{{vm_state}}"
 
