@@ -8,17 +8,13 @@
 
   - name: Read CSV
     set_fact:
-        dir_list: "{{lookup('file',vars['csv_file_path']).split('\n')}}"
+        dir_list: "{{ create_dir_list | from_json }}"
 
   - name: Create Directories
     file:
-        path: "{{item.split(',')[1]}}"
+        path: "{{item.split(',')[0]}}"
         state: directory
-        mode: "{{item.split(',')[2] | default('0777')}}"
-    delegate_to: "{{hostname}}"
-    when: inventory_hostname == hostname
-    vars:
-        hostname: "{{item.split(',')[0]}}"
+        mode: "{{item.split(',')[1] | default('0755')}}"
     loop: "{{dir_list}}"
     loop_control:
         loop_var: item
