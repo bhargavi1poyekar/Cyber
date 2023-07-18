@@ -100,7 +100,6 @@ def power_csv_process(input_file):
                 
     if restart_host_name and restart_host_name[0]!='crange1@':
     	restart(restart_host_name)
-    	print('restart')
     if power_off_machine and power_off_machine[0]!='':
         machine_list=json.dumps(power_off_machine)
         power_off(machine_list)
