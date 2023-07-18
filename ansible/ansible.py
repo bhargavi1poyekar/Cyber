@@ -6,6 +6,11 @@ import math
 
 inventory_path="/home/bhargavi/Cyber/ansible/playbooks/inventory"
 become_password='Crcsee2#'
+ip_name={
+   '130.85.121.26':'bhar-ub22',
+   '130.85.121.27':'bhar-kali',
+   '133.228.78.3':'bhar-ub20'
+}
 
 def install_packages(input_file, host_name):  
 
@@ -71,17 +76,41 @@ def user_remove(remove_users_list, remove_host_name):
 
 def power_csv_process(input_file):
 
-    machine_list=['bhar-kali','bhar-ub22']
-    machine_list=json.dumps(machine_list)
+    df_machine=pd.read_csv(input_file)
+    df_machine=df_machine.fillna('')
+
+    for index,row in df_machine.iterrows():
+        if row[2]=='Yes':
+            if row[3]!='':
+            	restart_host_name=[f'crange1@{r.strip()}' for r in row[3].split(',')] 
+            	power_on_machine=[ip_name[r.strip()] for r in row[3].split(',')] 
+            	power_off_machine=[ip_name[r.strip()] for r in row[3].split(',')]
+            elif row[4]!='':
+                restart_host_name=[f'crange1@{r.strip()}' for r in row[4].split(',')] 
+                power_on_machine=[ip_name[r.strip()] for r in row[4].split(',')] 
+                power_off_machine=[ip_name[r.strip()] for r in row[4].split(',')]
+            else:
+                restart_host_name=[f'crange1@{r.strip()}' for r in row[5].split(',')] 
+                power_on_machine=[ip_name[r.strip()] for r in row[5].split(',')] 
+                power_off_machine=[ip_name[r.strip()] for r in row[5].split(',')]
+        else:
+            restart_host_name=[f'crange1@{r.strip()}' for r in row[3].split(',')]
+            power_on_machine=[ip_name[r.strip()] for r in row[4].split(',')] 
+            power_off_machine=[ip_name[r.strip()] for r in row[5].split(',')]
+        
+        #print(restart_host_name,power_off_machine,power_on_machine)        
+    if restart_host_name and restart_host_name[0]!='crange1@':
+    	restart(restart_host_name)	
+    #machine_list=json.dumps(machine_list)
     playbook_path='/home/bhargavi/Cyber/ansible/playbooks/power_off.yml'
     extra_vars={
-        'machine_list':machine_list
+	#'machine_list':machine_list
     }
     options={
-        'extravars': extra_vars
+	'extravars': extra_vars
     }
     
-    run(playbook=playbook_path, **options)
+    #run(playbook=playbook_path, **options)
 
 def restart(host_name):
 
@@ -218,8 +247,8 @@ host_name='vmservers'
 # install_packages(install_file,host_name)
 
 # user_csv_process('Users.csv')
-# dir_csv_process('Dir.csv')
-power_csv_process('Dir.csv')
+dir_csv_process('Dir.csv')
+#power_csv_process('Power.csv')
 
 # user_remove(remove_file,host_name)
 # restart(host_name)
