@@ -97,21 +97,38 @@ def power_csv_process(input_file):
             restart_host_name=[f'crange1@{r.strip()}' for r in row[3].split(',')]
             power_on_machine=[ip_name[r.strip()] for r in row[4].split(',')] 
             power_off_machine=[ip_name[r.strip()] for r in row[5].split(',')]
-        
-        #print(restart_host_name,power_off_machine,power_on_machine)        
+                
     if restart_host_name and restart_host_name[0]!='crange1@':
-    	restart(restart_host_name)	
-    #machine_list=json.dumps(machine_list)
+    	restart(restart_host_name)
+    	print('restart')
+    if power_off_machine and power_off_machine[0]!='':
+        machine_list=json.dumps(power_off_machine)
+        power_off(machine_list)
+    if power_on_machine and power_on_machine[0]!='':
+        machine_list=json.dumps(power_on_machine)
+        power_on(machine_list)
+        
+
+def power_off(machine_list):
     playbook_path='/home/bhargavi/Cyber/ansible/playbooks/power_off.yml'
     extra_vars={
-	#'machine_list':machine_list
+	'machine_list':machine_list
     }
     options={
 	'extravars': extra_vars
     }
+    run(playbook=playbook_path, **options)
+   
+def power_on(machine_list):
+    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/power_server.yml'
+    extra_vars={
+	'machine_list':machine_list
+    }
+    options={
+	'extravars': extra_vars
+    }
+    run(playbook=playbook_path, **options)
     
-    #run(playbook=playbook_path, **options)
-
 def restart(host_name):
 
     playbook_path='/home/bhargavi/Cyber/ansible/playbooks/restart_server.yml'
@@ -247,8 +264,8 @@ host_name='vmservers'
 # install_packages(install_file,host_name)
 
 # user_csv_process('Users.csv')
-dir_csv_process('Dir.csv')
-#power_csv_process('Power.csv')
+# dir_csv_process('Dir.csv')
+# power_csv_process('Power.csv')
 
 # user_remove(remove_file,host_name)
 # restart(host_name)
