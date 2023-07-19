@@ -10,7 +10,8 @@ become_password='Crcsee2#'
 IP_NAME={
    '130.85.121.26':'bhar-ub22',
    '130.85.121.27':'bhar-kali',
-   '133.228.78.3':'bhar-ub20'
+   '133.228.78.3':'bhar-ub20',
+   '130.85.121.34':'testvm_ubuntu22'
 }
 
 VM_TEMPLATES={
@@ -300,9 +301,9 @@ host_name='vmservers'
 # install_packages(install_file,host_name)
 
 # user_csv_process('Users.csv')
-# dir_csv_process('Dir.csv')
-# power_csv_process('Power.csv')
-deploy_template_csv('VM.csv')
+# dir_csv_process('Dir.csv') 
+power_csv_process('Power.csv')
+# deploy_template_csv('VM.csv')
 
 # user_remove(remove_file,host_name)
 # restart(host_name)
