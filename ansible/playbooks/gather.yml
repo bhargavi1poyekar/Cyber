@@ -1,21 +1,11 @@
 
 ---
-- name: Gather VM UUID using vmware_vm_vmids module
-  hosts: 'crange1@130.85.121.26'
-  gather_facts: no
+- name: Gather Facts
+  hosts: node
+  gather_facts: yes
 
-  pre_tasks:
-    - include_vars: vcenter_vars.yml
   tasks:
-    - name: Gather VM identifiers
-      community.vmware.vmware_vm_vmids:
-         hostname: "130.85.121.26"
-         username: "{{vcenter_username}}"
-         password: "{{vcenter_password}}"
-         validate_certs: "{{vcenter_validate_certs}}"
-      register: vm_ids
-
-    - name: Print VM UUID
+    - name: Print Gathered Facts
       debug:
-        msg: "UUID of VM {{ vm_ids.guest_id }}"
+        var: ansible_facts
 
