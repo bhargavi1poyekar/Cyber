@@ -1,4 +1,4 @@
 Timestamp,Email Address,Do you want to perform the tasks on same machines?,Machines to be Rebooted.,Machines to be Powered-on,Machines to be Powered-off
 7/18/2023 12:50:15,bpoyeka1@umbc.edu,No,130.85.121.26,130.85.121.27,130.85.121.27
-7/18/2023 12:50:54,bpoyeka1@umbc.edu,Yes,"130.85.121.27, 130.85.121.26",,
-#7/19/2023 9:01:51,rprustag@umbc.edu,Yes,130.85.121.34,,
+7/18/2023 12:50:54,bpoyeka1@umbc.edu,No,"130.85.121.27, 130.85.121.26",,
+

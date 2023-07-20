@@ -94,32 +94,18 @@ def power_csv_process(input_file):
     df_machine=df_machine.fillna('')
 
     for index,row in df_machine.iterrows():
-        if row[2]=='Yes':
-            if row[3]!='':
-            	restart_host_name=[f'crange1@{r.strip()}' for r in row[3].split(',')] 
-            	power_on_machine=[IP_NAME[r.strip()] for r in row[3].split(',')] 
-            	power_off_machine=[IP_NAME[r.strip()] for r in row[3].split(',')]
-            elif row[4]!='':
-                restart_host_name=[f'crange1@{r.strip()}' for r in row[4].split(',')] 
-                power_on_machine=[IP_NAME[r.strip()] for r in row[4].split(',')] 
-                power_off_machine=[IP_NAME[r.strip()] for r in row[4].split(',')]
-            else:
-                restart_host_name=[f'crange1@{r.strip()}' for r in row[5].split(',')] 
-                power_on_machine=[IP_NAME[r.strip()] for r in row[5].split(',')] 
-                power_off_machine=[IP_NAME[r.strip()] for r in row[5].split(',')]
-        else:
-            restart_host_name=[f'crange1@{r.strip()}' for r in row[3].split(',')]
-            power_on_machine=[IP_NAME[r.strip()] for r in row[4].split(',')] 
-            power_off_machine=[IP_NAME[r.strip()] for r in row[5].split(',')]
-                
-    if restart_host_name and restart_host_name[0]!='crange1@':
-    	restart(restart_host_name)
-    if power_off_machine and power_off_machine[0]!='':
-        machine_list=json.dumps(power_off_machine)
-        power_off(machine_list)
-    if power_on_machine and power_on_machine[0]!='':
-        machine_list=json.dumps(power_on_machine)
-        power_on(machine_list)
+        if row[3]!='':
+	        restart_host_name=[IP_NAME[r.strip()] for r in row[3].split(',')] 
+	        machine_list=json.dumps(restart_host_name)
+	        restart(machine_list)
+        if row[5]!='':
+	        power_off_machine=[IP_NAME[r.strip()] for r in row[5].split(',')]
+	        machine_list=json.dumps(power_off_machine)
+	        power_off(machine_list) 
+        if row[4]!='':
+	        power_on_machine=[IP_NAME[r.strip()] for r in row[4].split(',')]
+	        machine_list=json.dumps(power_on_machine)
+	        power_on(machine_list)
         
 
 def power_off(machine_list):
@@ -142,15 +128,16 @@ def power_on(machine_list):
     }
     run(playbook=playbook_path, **options)
     
-def restart(host_name):
+def restart(machine_list):
 
-    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/restart_server.yml'
-
+    playbook_path='/home/bhargavi/Cyber/ansible/playbooks/restart.yml'
     extra_vars={
-        'host_name':host_name,
+	'machine_list':machine_list
     }
-
-    ansible_run(playbook_path,extra_vars)
+    options={
+	'extravars': extra_vars
+    }
+    run(playbook=playbook_path, **options)
 
 def deploy_template_csv(input_file):
     df_vm=pd.read_csv(input_file)
@@ -164,7 +151,7 @@ def deploy_template_csv(input_file):
         folder_name=course_name+prof_name.split(' ')[0]
         vm_name=course_name+prof_name.split(' ')[0]+'-'+VM_NAME[os]
         template=VM_TEMPLATES[os]
-        
+
         extra_vars={
             'create_folder_name':folder_name,
             'create_vm_name':vm_name,
@@ -278,8 +265,6 @@ def ufw_reset(host_name):
     #     'host_name':host_name,
     # }
 
-    # ansible_run(playbook_path,extra_vars)
- 
 
 def ansible_run(playbook_path,extra_vars):
 
