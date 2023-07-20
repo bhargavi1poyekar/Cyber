@@ -276,6 +276,10 @@ def ansible_run(playbook_path,extra_vars):
 
     run(playbook=playbook_path, **options)
 
+def cryptography():
+    
+
+
 host_name='vmservers'
 # install_file='/home/bhargavi/Cyber/ansible/csv_files/packages.csv'
 # user_file='/home/bhargavi/Cyber/ansible/csv_files/users.csv'
@@ -285,10 +289,10 @@ host_name='vmservers'
 # copy_file='/home/bhargavi/Cyber/ansible/csv_files/copy.csv'
 # install_packages(install_file,host_name)
 
-# user_csv_process('Users.csv')
-# dir_csv_process('Dir.csv') 
-power_csv_process('Power.csv')
-# deploy_template_csv('VM.csv')
+
+
+
+
 
 # user_remove(remove_file,host_name)
 # restart(host_name)
@@ -301,6 +305,32 @@ power_csv_process('Power.csv')
 # ufw_reset('ub20')
 # xrdp_install('ub20')
 
+class Switcher(object): 
+    def indirect(self, i): 
+        # to call the required method of cryptography 
+        method_name = 'choice_'+str(i) 
+        method = getattr(self, method_name, lambda: print('Invalid option')) 
+        return method() 
+    
+    def choice_1(self): 
+        power_csv_process('Power.csv')
+
+    def choice_2(self):
+        user_csv_process('Users.csv')
+
+    def choice_3(self):
+        deploy_template_csv('VM.csv')
+    
+    def choice_4(self):
+        dir_csv_process('Dir.csv') 
+    
+    def choice_5(self):
+        cryptography('Crypt.csv')
+
+
+s = Switcher() # Creating object of Switcher Class 
+ch = int(input("Select the task you want to perform:\n1. Power on/off/Restart\n2. User add/remove\n3. Create VM\n4. Create/Delete Directory\n")) 
+s.indirect(ch) 
 
 
 
