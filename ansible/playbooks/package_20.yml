@@ -1,0 +1,39 @@
+- name: Find and copy package to remote machine
+  hosts: 133.228.78.3
+  gather_facts: no
+  vars:
+    package_name: "apache2"  # Replace with the package name
+
+  tasks:
+    - name: Check if the package is installed on the local machine
+      shell: dpkg-query -W -f='${Status}' {{ package_name }} | grep -q "install ok installed"
+      ignore_errors: yes
+      register: package_installed
+
+    - name: Install the package if not already installed
+      apt:
+        name: "{{ package_name }}"
+        state: present
+      when: package_installed.rc != 0
+
+    - name: Find the path of the package on the local machine
+      shell: dpkg -L {{ package_name }}
+      changed_when: false
+      register: package_path
+      when: package_installed.rc == 0
+
+    - name: Copy the package to the remote machine
+      copy:
+        src: "{{ item }}"
+        dest: "/tmp/{{ item | basename }}"
+      with_items:
+        - "{{ package_path.stdout_lines }}"
+      when: package_installed.rc == 0
+
+    - name: Install the package on the remote machine
+      apt:
+        deb: "/tmp/{{ item | basename }}"
+        state: present
+      with_items:
+        - "{{ package_path.stdout_lines }}"
+      when: package_installed.rc == 0
