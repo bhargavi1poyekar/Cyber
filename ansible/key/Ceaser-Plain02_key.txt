@@ -1,0 +1,6 @@
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .
+AMYWUONPEGXTLKJBQVHZFDSRICombgqzvhcsikfaldrxetyunjwp_@
+
+Plaintext: We need a strong encryption algorithm. At a minimum we would like the algorithm to be such that an opponent who knows the algorithm and has access to one or more ciphertexts would be unable to decipher the ciphertext or figure out the key. This requirement is usually stated in a stronger form: The opponent should be unable to decrypt ciphertext or discover the key even if he or she is in possession of a number of ciphertexts together with the plaintext that produced each ciphertext. The sender and receiver must have obtained copies of the secret key in a secure fashion and must keep the key secure.
+
+Ciphertext: Sq_aqqg_o_etxlav_qabxwdtcla_okvlxcthf@_At_o_fcacfyf_nq_nlykg_kciq_thq_okvlxcthf_tl_mq_eybh_thot_oa_lddlaqat_nhl_ialne_thq_okvlxcthf_oag_hoe_obbqee_tl_laq_lx_flxq_bcdhqxtqjte_nlykg_mq_yaomkq_tl_gqbcdhqx_thq_bcdhqxtqjt_lx_zcvyxq_lyt_thq_iqw@_Zhce_xqrycxqfqat_ce_yeyokkw_etotqg_ca_o_etxlavqx_zlxf:_Zhq_lddlaqat_ehlykg_mq_yaomkq_tl_gqbxwdt_bcdhqxtqjt_lx_gcebluqx_thq_iqw_quqa_cz_hq_lx_ehq_ce_ca_dleeqeecla_lz_o_ayfmqx_lz_bcdhqxtqjte_tlvqthqx_ncth_thq_dkocatqjt_thot_dxlgybqg_qobh_bcdhqxtqjt@_Zhq_eqagqx_oag_xqbqcuqx_fyet_houq_lmtocaqg_bldcqe_lz_thq_eqbxqt_iqw_ca_o_eqbyxq_zoehcla_oag_fyet_iqqd_thq_iqw_eqbyxq@

@@ -8,7 +8,7 @@
 
   - name: Read CSV
     set_fact:
-        dir_list: "{{lookup('file',vars['csv_file_path']).split('\n')}}"
+        dir_list: "{{ copy_csv_list | from_json }}"
 
   
   - name: Copy file to Remote Machine from local Machine

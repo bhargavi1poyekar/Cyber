@@ -1,0 +1,8 @@
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .
+NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm@_
+
+Plaintext: Confidentiality With Symmetric Encryption. The universal technique for providing confidentiality for transmitted or stored data is symmetric encryption. This section introduces the basic concept of symmetric encryption. This is followed by an overview of the two most important symmetric encryption algorithms the Data Encryption Standard DES and the Advanced Encryption Standard AES which are block encryption algorithms. Finally this section introduces the concept of symmetric stream encryption algorithms. Symmetric encryption was the only type of encryption in use prior to the introduction of public-key encryption.
+
+Ciphertext: Pbasvqragvnyvgl@Jvgu@Flzzrgevp@Rapelcgvba_@Gur@havirefny@grpuavdhr@sbe@cebivqvat@pbasvqragvnyvgl@sbe@genafzvggrq@be@fgberq@qngn@vf@flzzrgevp@rapelcgvba_@Guvf@frpgvba@vagebqhprf@gur@onfvp@pbaprcg@bs@flzzrgevp@rapelcgvba_@Guvf@vf@sbyybjrq@ol@na@bireivrj@bs@gur@gjb@zbfg@vzcbegnag@flzzrgevp@rapelcgvba@nytbevguzf@gur@Qngn@Rapelcgvba@Fgnaqneq@QRF@naq@gur@Nqinaprq@Rapelcgvba@Fgnaqneq@NRF@juvpu@ner@oybpx@rapelcgvba@nytbevguzf_@Svanyyl@guvf@frpgvba@vagebqhprf@gur@pbaprcg@bs@flzzrgevp@fgernz@rapelcgvba@nytbevguzf_@Flzzrgevp@rapelcgvba@jnf@gur@bayl@glcr@bs@rapelcgvba@va@hfr@cevbe@gb@gur@vagebqhpgvba@bs@choyvp-xrl@rapelcgvba_
+
+Key: 13

@@ -1,0 +1,8 @@
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .
+NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm@_
+
+Plaintext: We need a strong encryption algorithm. At a minimum we would like the algorithm to be such that an opponent who knows the algorithm and has access to one or more ciphertexts would be unable to decipher the ciphertext or figure out the key. This requirement is usually stated in a stronger form: The opponent should be unable to decrypt ciphertext or discover the key even if he or she is in possession of a number of ciphertexts together with the plaintext that produced each ciphertext. The sender and receiver must have obtained copies of the secret key in a secure fashion and must keep the key secure.
+
+Ciphertext: Jr@arrq@n@fgebat@rapelcgvba@nytbevguz_@Ng@n@zvavzhz@jr@jbhyq@yvxr@gur@nytbevguz@gb@or@fhpu@gung@na@bccbarag@jub@xabjf@gur@nytbevguz@naq@unf@npprff@gb@bar@be@zber@pvcuregrkgf@jbhyq@or@hanoyr@gb@qrpvcure@gur@pvcuregrkg@be@svther@bhg@gur@xrl_@Guvf@erdhverzrag@vf@hfhnyyl@fgngrq@va@n@fgebatre@sbez:@Gur@bccbarag@fubhyq@or@hanoyr@gb@qrpelcg@pvcuregrkg@be@qvfpbire@gur@xrl@rira@vs@ur@be@fur@vf@va@cbffrffvba@bs@n@ahzore@bs@pvcuregrkgf@gbtrgure@jvgu@gur@cynvagrkg@gung@cebqhprq@rnpu@pvcuregrkg_@Gur@fraqre@naq@erprvire@zhfg@unir@bognvarq@pbcvrf@bs@gur@frperg@xrl@va@n@frpher@snfuvba@naq@zhfg@xrrc@gur@xrl@frpher_
+
+Key: 13
