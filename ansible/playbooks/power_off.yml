@@ -7,6 +7,9 @@
 
   pre_tasks:
     - include_vars: vcenter_vars.yml
+ 
+  vars_files:
+    - authentication.yml 
 
   tasks:
     - name: Read json

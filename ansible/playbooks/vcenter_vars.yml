@@ -7,5 +7,4 @@ vm_name: "test-ub22"
 vcenter_folder: "testdeploy"
 vm_state: "powered-off"
 vm_template: "CyberRange/vm/CRCSEE/Template/Temp-ub22"
-vcenter_username: "crange1"
-vcenter_password: "Crcsee2#"
+
