@@ -228,7 +228,7 @@ def vernam(opath,plaintexts,plain):
         keyfile.write('\nKey: '+ keytext + "\n")
         keyfile.close()
 
-def vigenere(opath, plaintexts):
+def vigenere(opath, plaintexts,key):
 
     plainu = [ chr(letter) for letter in range(65, 65+26)] # Uppercase Letters
     plainl = [ chr(letter) for letter in range(97, 97+26)] # Lowercase Letters
@@ -238,12 +238,16 @@ def vigenere(opath, plaintexts):
 
     inputfile="Vigenere-Plain.txt"
     outputfile = opath + "Cipher".join(inputfile.split("-Plain"))
+
     for i in range(len(plaintexts)):
 
-        keytext=""
-        for _ in range(10):
-            random_char = chr(random.randint(65, 90))
-            keytext += random_char
+        if key!='random':
+            keytext=key
+        else:
+            keytext=""
+            for _ in range(10):
+                random_char = chr(random.randint(65, 90))
+                keytext += random_char
 
         ciphertext = [] # List for cipertext
 

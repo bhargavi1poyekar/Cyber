@@ -724,7 +724,7 @@ class Switcher(object):
 
 
 s = Switcher() # Creating object of Switcher Class 
-ch = int(input("Select the task you want to perform:\n1. Power on/off/Restart\n2. User add/remove\n3. Create VM\n4. Create/Delete Directory\n")) 
+ch = int(input("Select the task you want to perform:\n1. Power on/off/Restart\n2. User add/remove\n3. Create VM\n4. Create/Delete Directory\n5. Cryptography Excercise")) 
 s.indirect(ch) 
 
 
