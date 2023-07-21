@@ -11,7 +11,7 @@ bhargavi@130.85.121.29
 crange1@133.228.78.3
 
 [node:vars]
-ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q bhargavi@130.85.121.29"'
+ansible_ssh_common_args='-o ProxyJump=bhargavi@130.85.121.29 -A'
 
 
 [cmsc626]
