@@ -8,6 +8,7 @@ import os, sys, random
 inventory_path="/home/bhargavi/Cyber/ansible/playbooks/inventory"
 become_password='Crcsee2#'
 
+
 IP_NAME={
    '130.85.121.26':'bhar-ub22',
    '130.85.121.27':'bhar-kali',
@@ -115,7 +116,11 @@ def power_off(machine_list):
 	'machine_list':machine_list
     }
     options={
-	'extravars': extra_vars
+        'envvars':{
+             'ANSIBLE_SUDO_PASS':become_password,
+             
+        },
+        'extravars':extra_vars
     }
     run(playbook=playbook_path, **options)
    
@@ -124,8 +129,13 @@ def power_on(machine_list):
     extra_vars={
 	'machine_list':machine_list
     }
+    
     options={
-	'extravars': extra_vars
+        'envvars':{
+             'ANSIBLE_SUDO_PASS':become_password,
+             
+        },
+        'extravars':extra_vars
     }
     run(playbook=playbook_path, **options)
     
@@ -135,9 +145,17 @@ def restart(machine_list):
     extra_vars={
 	'machine_list':machine_list
     }
+    
     options={
-	'extravars': extra_vars
+        
+        'envvars':{
+             'ANSIBLE_SUDO_PASS':become_password,
+             
+        },
+        'extravars':extra_vars
     }
+
+
     run(playbook=playbook_path, **options)
 
 def deploy_template_csv(input_file):
@@ -271,7 +289,10 @@ def ansible_run(playbook_path,extra_vars):
 
     options={
         'inventory':inventory_path,
-        'envvars':{'ANSIBLE_SUDO_PASS':become_password},
+        'envvars':{
+             'ANSIBLE_SUDO_PASS':become_password,
+             'ANSIBLE_VAULT_PASSWORD':vault_password
+        },
         'extravars':extra_vars
     }
 
@@ -724,7 +745,7 @@ class Switcher(object):
 
 
 s = Switcher() # Creating object of Switcher Class 
-ch = int(input("Select the task you want to perform:\n1. Power on/off/Restart\n2. User add/remove\n3. Create VM\n4. Create/Delete Directory\n5. Cryptography Excercise")) 
+ch = int(input("Select the task you want to perform:\n1. Power on/off/Restart\n2. User add/remove\n3. Create VM\n4. Create/Delete Directory\n5. Cryptography Excercise\n")) 
 s.indirect(ch) 
 
 

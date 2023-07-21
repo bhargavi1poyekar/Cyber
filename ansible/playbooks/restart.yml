@@ -8,6 +8,7 @@
   pre_tasks:
    - include_vars: vcenter_vars.yml
 
+
   tasks:
    - name: Read json
      set_fact:
