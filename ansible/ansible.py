@@ -291,7 +291,7 @@ def ansible_run(playbook_path,extra_vars):
         'inventory':inventory_path,
         'envvars':{
              'ANSIBLE_SUDO_PASS':become_password,
-             'ANSIBLE_VAULT_PASSWORD':vault_password
+        
         },
         'extravars':extra_vars
     }
