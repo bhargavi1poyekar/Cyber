@@ -1,0 +1,30 @@
+{% extends "forms/base.html" %}
+{% block content %}  
+<div class="container form-container">
+    <h1>Remove Users</h1> 
+    <div class="vm_form">
+        <form action="{% url 'user_remove' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <p class="text-muted">Give List of VM's (ip-addresses) on which the task need to be conducted. 
+                            Give Comma Separated List. <br>Eg: 192.121.85.23,192.121.85.24
+                        </p>
+                        <label for="ip_addr">Machines for removing users</label>
+                        <textarea class="form-control" name="ip_addr" id="ip_addr" required></textarea>
+                    
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="users">Give list of users to be removed</label>
+                        <!-- <p class="text-muted">Format: username,password,make_sudo</p> -->
+                        <textarea class="form-control" name="users" id="users" placeholder="bhargavi,darshan"></textarea>
+                    </div>
+                    
+                </div>
+            </fieldset>
+    <div class="block-button"><button type="submit" class="btn btn-primary btn-block">Submit</button></div>
+        </form>
+    </div>
+</div>
+{% endblock %}
