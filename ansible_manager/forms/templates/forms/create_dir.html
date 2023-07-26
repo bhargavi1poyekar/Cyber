@@ -7,7 +7,7 @@
             {% csrf_token %}
             <fieldset>
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-12">
                         <p class="text-muted">Give List of VM's (ip-addresses) on which the task need to be conducted. 
                             Give Comma Separated List. <br>Eg: 192.121.85.23,192.121.85.24
                         </p>
@@ -15,7 +15,7 @@
                         <textarea class="form-control" name="ip_addr" id="ip_addr" required></textarea>
                     
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-12">
                         <label for="dir_path">Give list of directory paths to be added</label>
                         <p class="text-muted">Format: directory_path,directory_permission (giving permission is optional)</p>
                         <textarea class="form-control" name="dir_path" id="dir_path" placeholder="/home/bhargavi,0755&#10/home/darshan"></textarea>
