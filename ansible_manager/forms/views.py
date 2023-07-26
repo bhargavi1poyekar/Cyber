@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from django.shortcuts import redirect
 from django.templatetags.static import static
 from django.conf import settings
 import os
@@ -52,7 +53,8 @@ def new_vm(request):
             'extravars':extra_vars
         }
         run(playbook=playbook_path,**options)
-        return HttpResponse("VM created")
+        
+        #return redirect('dashboard')
         
     else:
         return render(request,'forms/new_vm_form.html')
@@ -75,7 +77,8 @@ def power_on(request):
             'extravars':extra_vars
         }
         run(playbook=playbook_path,**options)
-        return HttpResponse("Powered on")
+        return redirect('dashboard')
+        #return HttpResponse("Powered on")
     else:
         return render(request,'forms/power_on.html')
 
@@ -94,7 +97,8 @@ def power_off(request):
             'extravars':extra_vars
         }
         run(playbook=playbook_path,**options)
-        return HttpResponse("Powered off")
+        return redirect('dashboard')
+        #return HttpResponse("Powered off")
     else:
         return render(request,'forms/power_off.html')
 
@@ -113,7 +117,8 @@ def restart(request):
             'extravars':extra_vars
         }
         run(playbook=playbook_path,**options)
-        return HttpResponse("Restarted")
+        return redirect('dashboard')
+        #return HttpResponse("Restarted")
     else:
         return render(request,'forms/restart.html')
 
@@ -130,7 +135,8 @@ def user_add(request):
             'add_users_list':add_users_list
         }
         ansible_run(playbook_path,extra_vars)
-        return HttpResponse("users added")
+        return redirect('dashboard')
+        #return HttpResponse("users added")
     else:
         return render(request,'forms/user_add.html')
 
@@ -147,7 +153,8 @@ def user_remove(request):
             'remove_users_list':remove_users_list
         }
         ansible_run(playbook_path,extra_vars)
-        return HttpResponse("users removed")
+        return redirect('dashboard')
+        #return HttpResponse("users removed")
     else:
         return render(request,'forms/user_remove.html')
 
@@ -163,7 +170,8 @@ def create_dir(request):
             'create_dir_list':create_dir_list
         }
         ansible_run(playbook_path,extra_vars)
-        return HttpResponse("Create Directory")
+        return redirect('dashboard')
+        #return HttpResponse("Create Directory")
     else:
         return render(request,'forms/create_dir.html')
 
@@ -179,7 +187,8 @@ def delete_dir(request):
             'delete_dir_list':delete_dir_list
         }
         ansible_run(playbook_path,extra_vars)
-        return HttpResponse("Delete Directory")
+        return redirect('dashboard')
+        #return HttpResponse("Delete Directory")
     else:
         return render(request,'forms/delete_dir.html')
 
