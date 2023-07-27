@@ -54,7 +54,7 @@ def new_vm(request):
         }
         run(playbook=playbook_path,**options)
         
-        #return redirect('dashboard')
+        return redirect('dashboard')
         
     else:
         return render(request,'forms/new_vm_form.html')
