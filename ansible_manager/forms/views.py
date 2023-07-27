@@ -121,15 +121,24 @@ def user_add(request):
     if request.method=='POST':
         ip_addr=[ip.strip() for ip in request.POST['ip_addr'].split(',')]
         add_host_name=['crange1@'+ip for ip in ip_addr]
-        # print(add_host_name)
-        add_users=request.POST['users'].split('\r\n')
-        add_users_list=json.dumps(add_users)
+        
+        if request.POST['users']!='':
+            add_users=request.POST['users'].split('\r\n')
+            add_users_list=json.dumps(add_users)
+        if request.FILES['user_add_file']:
+            add_file=request.FILES['user_add_file'].read()
+            add_file=add_file.decode('utf-8')
+            add_users=list(filter(None,add_file.split('\n')))
+            add_users_list=json.dumps(add_users)
+
+
         playbook_path=static+'/forms/playbooks/user_add.yml'
         extra_vars={
             'host_name':add_host_name,
             'add_users_list':add_users_list
         }
         ansible_run(playbook_path,extra_vars)
+
         return HttpResponse("users added")
     else:
         return render(request,'forms/user_add.html')
@@ -138,7 +147,6 @@ def user_remove(request):
     if request.method=='POST':
         ip_addr=[ip.strip() for ip in request.POST['ip_addr'].split(',')]
         remove_host_name=['crange1@'+ip for ip in ip_addr]
-        # print(add_host_name)
         remove_users=request.POST['users'].split(',')
         remove_users_list=json.dumps(remove_users)
         playbook_path=static+'/forms/playbooks/user_remove.yml'
