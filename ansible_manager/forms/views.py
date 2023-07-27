@@ -39,6 +39,7 @@ def new_vm(request):
         prof_name=request.POST['instructor_name']
         os=request.POST['os']
         num_vm=request.POST['num_vm']
+        
         folder_name=course_number+prof_name.split(' ')[0]
         vm_name=course_number+prof_name.split(' ')[0]+'-'+os
         template=VM_TEMPLATES[os]
@@ -47,7 +48,7 @@ def new_vm(request):
             'create_folder_name':folder_name,
             'create_vm_name':vm_name,
             'create_template':template,
-            'num_vm':num_vm
+            'num_vm':int(num_vm)
         }
         options={
             'extravars':extra_vars
@@ -130,7 +131,7 @@ def user_add(request):
         if request.POST['users']!='':
             add_users=request.POST['users'].split('\r\n')
             add_users_list=json.dumps(add_users)
-        if request.FILES['user_add_file']:
+        if request.FILES:
             add_file=request.FILES['user_add_file'].read()
             add_file=add_file.decode('utf-8')
             add_users=list(filter(None,add_file.split('\n')))
@@ -143,13 +144,13 @@ def user_add(request):
             'add_users_list':add_users_list
         }
         ansible_run(playbook_path,extra_vars)
-<<<<<<< HEAD
+
 
         return HttpResponse("users added")
-=======
+
         return redirect('dashboard')
         #return HttpResponse("users added")
->>>>>>> 0ab815b2d2e5df9ea6d1d65080c92aaf42e0d400
+
     else:
         return render(request,'forms/user_add.html')
 
