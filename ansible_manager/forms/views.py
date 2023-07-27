@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,JsonResponse
 from django.template import loader
 from django.shortcuts import redirect
 from django.templatetags.static import static
@@ -55,7 +55,8 @@ def new_vm(request):
         }
         run(playbook=playbook_path,**options)
         
-        return redirect('dashboard')
+        # return redirect('dashboard')
+        return JsonResponse({'message':"VM's created"})
         
     else:
         return render(request,'forms/new_vm_form.html')
@@ -78,8 +79,9 @@ def power_on(request):
             'extravars':extra_vars
         }
         run(playbook=playbook_path,**options)
-        return redirect('dashboard')
+        # return redirect('dashboard')
         #return HttpResponse("Powered on")
+        return JsonResponse({'message':"Powered on"})
     else:
         return render(request,'forms/power_on.html')
 
@@ -98,7 +100,8 @@ def power_off(request):
             'extravars':extra_vars
         }
         run(playbook=playbook_path,**options)
-        return redirect('dashboard')
+        return JsonResponse({'message':"Powered off"})
+        # return redirect('dashboard')
         #return HttpResponse("Powered off")
     else:
         return render(request,'forms/power_off.html')
@@ -118,7 +121,8 @@ def restart(request):
             'extravars':extra_vars
         }
         run(playbook=playbook_path,**options)
-        return redirect('dashboard')
+        return JsonResponse({'message':"Restarted"})
+        # return redirect('dashboard')
         #return HttpResponse("Restarted")
     else:
         return render(request,'forms/restart.html')
@@ -146,10 +150,8 @@ def user_add(request):
         ansible_run(playbook_path,extra_vars)
 
 
-        return HttpResponse("users added")
-
-        return redirect('dashboard')
-        #return HttpResponse("users added")
+        # return redirect('dashboard')
+        return JsonResponse({'message':"users added"})
 
     else:
         return render(request,'forms/user_add.html')
@@ -166,7 +168,8 @@ def user_remove(request):
             'remove_users_list':remove_users_list
         }
         ansible_run(playbook_path,extra_vars)
-        return redirect('dashboard')
+        return JsonResponse({'message':"Users Removed"})
+        # return redirect('dashboard')
         #return HttpResponse("users removed")
     else:
         return render(request,'forms/user_remove.html')
@@ -183,7 +186,7 @@ def create_dir(request):
             'create_dir_list':create_dir_list
         }
         ansible_run(playbook_path,extra_vars)
-        return redirect('dashboard')
+        return JsonResponse({'message':"Directory Created"})
         #return HttpResponse("Create Directory")
     else:
         return render(request,'forms/create_dir.html')
@@ -200,7 +203,8 @@ def delete_dir(request):
             'delete_dir_list':delete_dir_list
         }
         ansible_run(playbook_path,extra_vars)
-        return redirect('dashboard')
+        # return redirect('dashboard')
+        return JsonResponse({'message':"Directories deleted"})
         #return HttpResponse("Delete Directory")
     else:
         return render(request,'forms/delete_dir.html')
