@@ -30,9 +30,22 @@
         folder: "{{create_folder_name}}"
         template: "{{create_template}}"
         state: "{{vm_state}}"
+        wait_for_ip_address: yes
+        networks:
+          - name: "{{vm_network}}"
+            dhcp: yes
+      
       loop: "{{range(1,num_vm+1)}}"
       loop_control:
         loop_var: item
+      register: vm_deploy_results
+     
+    - name: Display VM IPs
+      debug: 
+        msg: "VM {{item.item.name}} IP:{{item.ansible_facts.ansible_default_ipv4.address}}"
+      loop: "{{vm_deploy_results.results}}"
+        
+   
       
       
 
