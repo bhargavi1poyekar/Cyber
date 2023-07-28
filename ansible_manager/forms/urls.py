@@ -12,4 +12,5 @@ urlpatterns=[
     path('manage_vm/user_remove',views.user_remove,name='user_remove'),
     path('manage_vm/create_dir',views.create_dir,name='create_dir'),
     path('manage_vm/delete_dir',views.delete_dir,name='delete_dir'),
+    path('open-exercise/<int:exercise_id>/',views.open_pdf,name='open-exercise'),
 ]

@@ -81,16 +81,18 @@
         </button>
       </h2>
       <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        {% for exercise in exercises %}
         <div class="form-section">
           <div class="form-link">
-            <div>Cryptography Excercise</div>
+            <div>{{exercise.name}}</div>
           </div>
-          <button class="btn btn-primary form-button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdWSesV2lJHKF-mOl6NoaQxxhfHAj4nbkEXJEKFkaXQke8lCQ/viewform?usp=sf_link')">Select</button>
-      </div>
+          <a class="btn btn-primary form-button" href="{% url 'open-exercise' exercise.id %}">Open</a>
+        </div>
+        {% endfor %}
       </div>
     </div>
   </div>
-{% endblock %}
+{% endblock content%}
 
   
  

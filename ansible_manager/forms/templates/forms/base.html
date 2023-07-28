@@ -42,16 +42,47 @@
                 z-index:1000;
 
             }
+            .nav-item{
+                margin-left: 20px;
+            }
            
         
         </style>
 
     </head>
     <body>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="{% url 'dashboard' %}">Virtual Machine Manager</a>
+        <nav class="navbar navbar-dark bg-dark fixed-top">
+            <div class="container d-flex justify-content-between">
+                <a class="navbar-brand" href="{% url 'dashboard' %}">Virtual Machine Manager</a>
+                <div>
+                    <ul class="navbar-nav flex-row">
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a href="{% url 'login' %}" class="nav-link">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'register' %}" class="nav-link">Register</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+
         </nav>
+
+        
         <div class="main-block">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{message.tags}}">
+                {{message}}
+            </div>
+            {% endfor %}
+            {% endif %}
         {% block content %}{% endblock %}
     	</div>
 

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
 from django.template import loader
-from django.shortcuts import redirect
+from django.shortcuts import redirect, get_object_or_404
 from django.templatetags.static import static
 from django.conf import settings
 import os
@@ -9,6 +9,8 @@ from ansible_runner import run
 import json
 import pandas as pd
 import random
+from django.contrib.auth.decorators import login_required
+from .models import Exercise
 # Create your views here.
 
 IP_NAME={
@@ -27,11 +29,14 @@ static=settings.STATIC_ROOT
 inventory_path=static+'/forms/playbooks/inventory'
 
 def dashboard(request):
-    return render(request,'forms/main.html')
+    exercises=Exercise.objects.all()
+    return render(request,'forms/main.html',{'exercises':exercises})
 
+@login_required
 def launch_vm_request(request):
     return render(request,'forms/vm_request.html')
 
+@login_required
 def new_vm(request):
     if request.method=='POST':
         playbook_path=static+'/forms/playbooks/deploy_template.yml'
@@ -61,6 +66,7 @@ def new_vm(request):
     else:
         return render(request,'forms/new_vm_form.html')
 
+@login_required
 def power_on(request):
     
     if request.method=='POST':
@@ -85,6 +91,7 @@ def power_on(request):
     else:
         return render(request,'forms/power_on.html')
 
+@login_required
 def power_off(request):
     if request.method=='POST':
         ip_addr=[IP_NAME[ip.strip()] for ip in request.POST['ip_addr'].split(',')]
@@ -106,6 +113,7 @@ def power_off(request):
     else:
         return render(request,'forms/power_off.html')
 
+@login_required
 def restart(request):
     if request.method=='POST':
         ip_addr=[IP_NAME[ip.strip()] for ip in request.POST['ip_addr'].split(',')]
@@ -127,6 +135,7 @@ def restart(request):
     else:
         return render(request,'forms/restart.html')
 
+@login_required
 def user_add(request):
     if request.method=='POST':
         ip_addr=[ip.strip() for ip in request.POST['ip_addr'].split(',')]
@@ -156,6 +165,7 @@ def user_add(request):
     else:
         return render(request,'forms/user_add.html')
 
+@login_required
 def user_remove(request):
     if request.method=='POST':
         ip_addr=[ip.strip() for ip in request.POST['ip_addr'].split(',')]
@@ -174,6 +184,7 @@ def user_remove(request):
     else:
         return render(request,'forms/user_remove.html')
 
+@login_required
 def create_dir(request):
     if request.method=='POST':
         ip_addr=[ip.strip() for ip in request.POST['ip_addr'].split(',')]
@@ -191,6 +202,7 @@ def create_dir(request):
     else:
         return render(request,'forms/create_dir.html')
 
+@login_required
 def delete_dir(request):
     if request.method=='POST':
         ip_addr=[ip.strip() for ip in request.POST['ip_addr'].split(',')]
@@ -217,6 +229,14 @@ def ansible_run(playbook_path,extra_vars):
     }
 
     run(playbook=playbook_path,**options)
+
+@login_required
+def open_pdf(request,exercise_id):
+    exercise=get_object_or_404(Exercise,id=exercise_id)
+    with open(exercise.pdf_file.path,'rb') as pdf_file:
+        response=HttpResponse(pdf_file.read(),content_type='application/pdf')
+        response['Content-Disposition']=f'inline; filename="{exercise.pdf_file.name}"'
+        return response
 
 
 
