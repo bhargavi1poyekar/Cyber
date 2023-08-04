@@ -23,12 +23,13 @@ IP_NAME={
 VM_TEMPLATES={
    'kali':'CyberRange/vm/CRCSEE/Template/Template-Kali-crg',
    'ub20':'CyberRange/vm/CRCSEE/Template/template-ub20',
-   'ub22':'CyberRange/vm/CRCSEE/Template/Temp-ub22',
+   'ub22':'CyberRange/vm/bhargavi/ub-22-template',
 }
 
 become_password='Crcsee2#'
 static=settings.STATIC_ROOT
 inventory_path=static+'/forms/playbooks/inventory'
+vault_password_cmd='--vault-password-file '+static+'/forms/playbooks/pass.txt'
 
 def dashboard(request):
     exercises=Exercise.objects.all()
@@ -55,10 +56,12 @@ def new_vm(request):
             'create_folder_name':folder_name,
             'create_vm_name':vm_name,
             'create_template':template,
-            'num_vm':int(num_vm)
+            'num_vm':int(num_vm),
+	    'ANSIBLE_VERBOSITY':4,
         }
         options={
-            'extravars':extra_vars
+            'extravars':extra_vars,
+            'cmdline':vault_password_cmd,
         }
         run(playbook=playbook_path,**options)
         
@@ -87,7 +90,8 @@ def power_on(request):
             'envvars':{
                 'ANSIBLE_SUDO_PASS':become_password,
             },
-            'extravars':extra_vars
+            'extravars':extra_vars,
+            'cmdline':vault_password_cmd,
         }
         result=run(playbook=playbook_path,**options)
         if result.rc==0:
@@ -112,7 +116,8 @@ def power_off(request):
             'envvars':{
                 'ANSIBLE_SUDO_PASS':become_password,
             },
-            'extravars':extra_vars
+            'extravars':extra_vars,
+            'cmdline':vault_password_cmd,
         }
         result=run(playbook=playbook_path,**options)
         if result.rc==0:
@@ -137,7 +142,8 @@ def restart(request):
             'envvars':{
                 'ANSIBLE_SUDO_PASS':become_password,
             },
-            'extravars':extra_vars
+            'extravars':extra_vars,
+            'cmdline':vault_password_cmd
         }
         result=run(playbook=playbook_path,**options)
         if result.rc==0:

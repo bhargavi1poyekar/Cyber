@@ -1,6 +1,8 @@
 ansible-runner==2.3.3
 asgiref==3.7.2
+crispy-bootstrap4==2022.1
 Django==4.2.3
+django-crispy-forms==2.0
 docutils==0.20.1
 lockfile==0.12.2
 numpy==1.25.1

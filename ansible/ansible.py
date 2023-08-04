@@ -99,11 +99,11 @@ def power_csv_process(input_file):
         if row[3]!='':
 	        restart_host_name=[IP_NAME[r.strip()] for r in row[3].split(',')] 
 	        machine_list=json.dumps(restart_host_name)
-	        restart(machine_list)
+	        #restart(machine_list)
         if row[5]!='':
 	        power_off_machine=[IP_NAME[r.strip()] for r in row[5].split(',')]
 	        machine_list=json.dumps(power_off_machine)
-	        power_off(machine_list) 
+	        #power_off(machine_list) 
         if row[4]!='':
 	        power_on_machine=[IP_NAME[r.strip()] for r in row[4].split(',')]
 	        machine_list=json.dumps(power_on_machine)
@@ -135,7 +135,8 @@ def power_on(machine_list):
              'ANSIBLE_SUDO_PASS':become_password,
              
         },
-        'extravars':extra_vars
+        'extravars':extra_vars,
+        'cmdline':'--vault-password-file /home/bhargavi/Cyber/ansible/playbooks/pass.txt'
     }
     run(playbook=playbook_path, **options)
     
