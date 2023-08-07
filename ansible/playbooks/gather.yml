@@ -1,7 +1,7 @@
 
 ---
 - name: Gather Facts
-  hosts: node
+  hosts: 'crange1@133.228.78.3'
   gather_facts: yes
 
   tasks:

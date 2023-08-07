@@ -1,5 +1,4 @@
-hostname,username,password,sudo
-bhargavi@130.85.121.26,crange1,Crcsee2#,yes
-bhargavi@130.85.121.27,crange1,Crcsee2#,yes
-bharg@133.228.78.3,crange1,Crcsee2#,yes
+test,testpass,yes
+test2,testpass,no
+test3,testpass,no
 
